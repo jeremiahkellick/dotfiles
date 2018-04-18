@@ -9,7 +9,7 @@ set scrolloff=1 " always show one line above and one line below the cursor
 set backspace&
 set colorcolumn=80 " show the 80 character limit line
 highlight ColorColumn ctermbg=7
-set number " show line numbers
+set number relativenumber " show relative line number and absolute at cursor
 set showcmd " show command in bottom bar
 set cursorline " highlight current line
 filetype indent on " load filetype-specific indent files
