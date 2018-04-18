@@ -72,6 +72,9 @@ Plug 'chr4/nginx.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'kana/vim-textobj-user'
+Plug 'thabullfrog/vim-textobj-rubyblock'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'benmills/vimux'
 call plug#end()
 
 let g:ctrlp_switch_buffer = 0
@@ -80,4 +83,17 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 let g:ctrlp_use_caching = 0
 
 map <C-n> :NERDTreeToggle<CR>
+
+command VimuxToggleRunner :call VimuxToggleRunner()
+
+function! VimuxToggleRunner()
+  if !exists("g:VimuxRunnerIndex") || _VimuxHasRunner(g:VimuxRunnerIndex) == -1
+    call VimuxOpenRunner()
+  else
+    call VimuxCloseRunner()
+  endif
+endfunction
+
+nnoremap <C-x> :VimuxToggleRunner<CR>
+let g:VimuxHeight=30
 
