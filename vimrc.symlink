@@ -7,6 +7,9 @@ set softtabstop=4 " number of real spaces in tab when editing
 set expandtab " tabs are converted to spaces
 set scrolloff=1 " always show one line above and one line below the cursor
 set backspace=eol " don't allow backspacing past the start of an insert
+" scroll the viewport faster
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
 set colorcolumn=80 " show the 80 character limit line
 highlight ColorColumn ctermbg=7
 set number relativenumber " show relative line number and absolute at cursor
@@ -55,6 +58,9 @@ augroup configgroup
     autocmd FileType ruby setlocal shiftwidth=2
     autocmd FileType ruby setlocal softtabstop=2
     autocmd FileType ruby setlocal commentstring=#\ %s
+    autocmd FileType scss setlocal tabstop=2
+    autocmd FileType scss setlocal shiftwidth=2
+    autocmd FileType scss setlocal softtabstop=2
     autocmd FileType python setlocal commentstring=#\ %s
     autocmd BufEnter *.cls setlocal filetype=java
     autocmd BufEnter *.zsh-theme setlocal filetype=zsh
@@ -74,6 +80,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'thabullfrog/vim-textobj-rubyblock'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
+Plug 'cakebaker/scss-syntax.vim'
 call plug#end()
 
 let g:ctrlp_switch_buffer = 0
