@@ -6,7 +6,7 @@ set tabstop=4 " number of visual spaces per TAB
 set softtabstop=4 " number of real spaces in tab when editing
 set expandtab " tabs are converted to spaces
 set scrolloff=1 " always show one line above and one line below the cursor
-set backspace&
+set backspace=eol " don't allow backspacing past the start of an insert
 set colorcolumn=80 " show the 80 character limit line
 highlight ColorColumn ctermbg=7
 set number relativenumber " show relative line number and absolute at cursor
@@ -36,7 +36,6 @@ imap <right> <nop>
 " move backups to /tmp
 set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set backupskip=/tmp/*,/private/tmp/*
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
 augroup configgroup
@@ -87,13 +86,23 @@ map <C-n> :NERDTreeToggle<CR>
 command VimuxToggleRunner :call VimuxToggleRunner()
 
 function! VimuxToggleRunner()
-  if !exists("g:VimuxRunnerIndex") || _VimuxHasRunner(g:VimuxRunnerIndex) == -1
-    call VimuxOpenRunner()
-  else
-    call VimuxCloseRunner()
-  endif
+    if !exists("g:VimuxRunnerIndex") || _VimuxHasRunner(g:VimuxRunnerIndex) == -1
+        call VimuxOpenRunner()
+    else
+        call VimuxCloseRunner()
+    endif
 endfunction
 
 nnoremap <C-x> :VimuxToggleRunner<CR>
 let g:VimuxHeight=30
+
+command! Irb call Irb()
+
+function! Irb()
+    w
+    call VimuxRunCommand("irb -r " . expand("%:p"))
+    TmuxNavigateDown
+endfunction
+
+nnoremap <C-i> :Irb<CR>
 
