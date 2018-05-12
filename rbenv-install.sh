@@ -8,4 +8,7 @@ git checkout tags/v1.1.1 -b v1.1.1
 git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 cd ~/.rbenv/plugins/ruby-build
 git checkout tags/v20180424 -b v20180424
+git clone https://github.com/carsomyr/rbenv-bundler ~/.rbenv/plugins/rbenv-bundler
+cd ~/.rbenv/plugins/rbenv-bundler
+git checkout tags/1.00 -b 1.00
 
