@@ -71,6 +71,8 @@ alias alert="notify-send --urgency=low -i \"\$([ \$? = 0 ] && echo terminal \
 # Alias definitions.
 alias be='bundle exec'
 alias rbo='rbenv bundler on'
+alias ku='keepass-push.sh'
+alias kd='keepass-pull.sh'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
