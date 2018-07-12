@@ -45,6 +45,9 @@ augroup configgroup
     autocmd!
     autocmd VimEnter * highlight clear SignColumn
     autocmd FileType php setlocal expandtab
+    autocmd FileType php setlocal tabstop=2
+    autocmd FileType php setlocal shiftwidth=2
+    autocmd FileType php setlocal softtabstop=2
     autocmd FileType php setlocal list
     autocmd FileType php setlocal listchars=tab:+\ ,eol:-
     autocmd FileType php setlocal formatprg=par\ -w80\ -T4
