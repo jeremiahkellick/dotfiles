@@ -1,0 +1,14 @@
+{
+    "[ruby]": {
+        "editor.tabSize": 2
+    },
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.fontFamily": "'Inconsolata', monospace",
+    "editor.fontSize": 16,
+    "editor.minimap.enabled": false,
+    "editor.rulers": [79],
+    "extensions.autoUpdate" : false,
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.startupEditor": "newUntitledFile"
+}
