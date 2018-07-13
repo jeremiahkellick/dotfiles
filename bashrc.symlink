@@ -29,10 +29,7 @@ shopt -s checkwinsize
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
-#shopt -s globstar
-
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+shopt -s globstar
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
@@ -44,29 +41,23 @@ case "$TERM" in
     xterm|xterm-color|*-256color) color_prompt=yes;;
 esac
 
-source ~/.git-completion.bash
-source ~/.git-prompt.sh
-
-PS1='\[\e[1;93m\]\u \[\e[34m\]\w$(__git_ps1 " (%s)") \$\[\e[m\] '
+if [ -f $HOME/.git-completion.bash ] && [ -f $HOME/.git-prompt.sh ]; then
+    . $HOME/.git-completion.bash
+    . $HOME/.git-prompt.sh
+    PS1='\[\e[1;93m\]\u \[\e[34m\]\w$(__git_ps1 " (%s)") \$\[\e[m\] '
+fi
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" \
             || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
+else
+    export CLICOLOR=1
 fi
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert="notify-send --urgency=low -i \"\$([ \$? = 0 ] && echo terminal \
-        || echo error)\" \"\$(history|tail -n1|sed -e \
-        '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')\""
 
 # Alias definitions.
 alias be='bundle exec'
@@ -95,4 +86,3 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
-
