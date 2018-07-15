@@ -5,9 +5,10 @@
     "editor.acceptSuggestionOnCommitCharacter": false,
     "editor.acceptSuggestionOnEnter": "off",
     "editor.fontFamily": "'Inconsolata', monospace",
-    "editor.fontSize": 16,
+    "editor.fontSize": 15,
     "editor.minimap.enabled": false,
     "editor.rulers": [79],
+    "editor.wordWrap": "on",
     "extensions.autoUpdate" : false,
     "workbench.colorTheme": "One Dark Pro",
     "workbench.startupEditor": "newUntitledFile"
