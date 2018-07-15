@@ -1,6 +1,5 @@
 " Longer explanations: https://dougblack.io/words/a-good-vimrc.html
 
-colorscheme Tomorrow-Night-Bright
 syntax enable
 set tabstop=4 " number of visual spaces per TAB
 set softtabstop=4 " number of real spaces in tab when editing
