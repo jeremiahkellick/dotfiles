@@ -15,6 +15,7 @@
     "extensions.autoUpdate" : false,
     "terminal.integrated.fontFamily": "'Inconsolata', monospace",
     "terminal.integrated.fontSize": 16,
+    "window.restoreWindows": "none",
     "workbench.colorCustomizations": {
         "terminal.ansiBlack": "#1E2127",
         "terminal.ansiBlue": "#61AFEF",
@@ -37,5 +38,6 @@
         "terminalCursor.background": "#5C6370"
     },
     "workbench.colorTheme": "One Dark Pro",
+    "workbench.panel.defaultLocation": "right",
     "workbench.startupEditor": "newUntitledFile"
 }

@@ -44,7 +44,7 @@ esac
 if [ -f $HOME/.git-completion.bash ] && [ -f $HOME/.git-prompt.sh ]; then
     . $HOME/.git-completion.bash
     . $HOME/.git-prompt.sh
-    PS1='\[\e[1;93m\]\u \[\e[34m\]\w$(__git_ps1 " (%s)") \$\[\e[m\] '
+    PS1='\[\e[1;92m\]\u \[\e[34m\]\w$(__git_ps1 " (%s)") \$\[\e[m\] '
 fi
 
 # enable color support of ls and also add handy aliases
