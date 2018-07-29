@@ -17,6 +17,7 @@
     "extensions.autoUpdate" : false,
     "terminal.integrated.fontFamily": "'Inconsolata', monospace",
     "terminal.integrated.fontSize": 16,
+    "terminal.integrated.fontWeightBold": "normal",
     "window.restoreWindows": "none",
     "workbench.colorCustomizations": {
         "terminal.ansiBlack": "#1E2127",
