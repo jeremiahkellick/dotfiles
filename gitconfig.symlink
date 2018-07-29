@@ -1,0 +1,5 @@
+[user]
+	name = Jeremiah Kellick
+	email = jeremiah@jeremiahkellick.com
+[core]
+	excludesfile = ~/.gitignore
