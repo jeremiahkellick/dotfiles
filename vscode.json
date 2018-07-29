@@ -7,10 +7,12 @@
     },
     "editor.acceptSuggestionOnCommitCharacter": false,
     "editor.acceptSuggestionOnEnter": "off",
+    "editor.folding": false,
     "editor.fontFamily": "'Inconsolata', monospace",
     "editor.fontSize": 16,
     "editor.minimap.enabled": false,
-    "editor.rulers": [72],
+    "editor.rulers": [80],
+    "editor.scrollBeyondLastColumn": 0,
     "editor.wordWrap": "on",
     "extensions.autoUpdate" : false,
     "terminal.integrated.fontFamily": "'Inconsolata', monospace",
@@ -38,6 +40,7 @@
         "terminalCursor.background": "#5C6370"
     },
     "workbench.colorTheme": "One Dark Pro",
+    "workbench.activityBar.visible": false,
     "workbench.panel.defaultLocation": "right",
     "workbench.startupEditor": "newUntitledFile"
 }
