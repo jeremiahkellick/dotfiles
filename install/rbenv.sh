@@ -17,6 +17,10 @@ if [ ! -x "$(command -v rbenv)" ]; then
         brew install rbenv
         rbenv init
     fi
+fi
+
+if [ ! -d "~/.rbenv/plugins/rbenv-bundler" ]; then
+    mkdir -p ~/.rbenv/plugins
     git clone https://github.com/carsomyr/rbenv-bundler \
         ~/.rbenv/plugins/rbenv-bundler
     cd ~/.rbenv/plugins/rbenv-bundler
