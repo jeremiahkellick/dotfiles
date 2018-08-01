@@ -37,7 +37,6 @@
         "terminal.ansiWhite": "#ABB2BF",
         "terminal.ansiYellow": "#D19A66",
         "terminal.foreground": "#ABB2BF",
-        "terminal.selectionBackground": "#3A3F4B",
         "terminalCursor.background": "#5C6370"
     },
     "workbench.colorTheme": "One Dark Pro",
