@@ -1,23 +1,25 @@
 #!/usr/bin/env bash
 
-code_path_linux="$HOME/.config/Code/User"
-code_path_mac="$HOME/Library/Application Support/Code/User"
-code_path=""
-
 if [ ! -x "$(command -v code)" ] && [[ "$OSTYPE" == "darwin"* ]]; then
     brew cask install visual-studio-code
 fi
 
+code_path=""
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    code_path="$code_path_linux"
+    code_path="$HOME/.config/Code/User"
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-    code_path="$code_path_mac"
+    code_path="$HOME/Library/Application Support/Code/User"
 fi
 
+files=$( find -H "$HOME/dotfiles/vscode" -maxdepth 3 -type f )
+
 mkdir -p $code_path
-if [ ! -L "$code_path/settings.json" ]; then
-    if [ -f "$code_path/settings.json" ]; then
-        rm "$code_path/settings.json"
+for file in $files ; do
+    target="$code_path/$( basename "$file" )"
+    if [ ! -L "$target" ]; then
+        if [ -f "$target" ]; then
+            rm "$target"
+        fi
+        ln -s "$file" "$target"
     fi
-    ln -s "$HOME/dotfiles/vscode.json" "$code_path/settings.json"
-fi
+done
