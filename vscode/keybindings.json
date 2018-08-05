@@ -1,4 +1,6 @@
 // Place your key bindings in this file to overwrite the defaults
 [
-    { "key": "cmd+i", "command": "-expandLineSelection" }
+    { "key": "cmd+i", "command": "-expandLineSelection" },
+    { "key": "cmd+i", "command": "code-runner.runCustomCommand" },
+    { "key": "ctrl+alt+k", "command": "-code-runner.runCustomCommand" }
 ]

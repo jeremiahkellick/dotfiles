@@ -5,6 +5,11 @@
     "[ruby]": {
         "editor.tabSize": 2
     },
+    "code-runner.customCommand": "pry -r $fullFileName",
+    "code-runner.ignoreSelection": true,
+    "code-runner.preserveFocus": false,
+    "code-runner.runInTerminal": true,
+    "code-runner.saveFileBeforeRun": true,
     "editor.acceptSuggestionOnCommitCharacter": false,
     "editor.acceptSuggestionOnEnter": "off",
     "editor.folding": false,
@@ -15,6 +20,12 @@
     "editor.scrollBeyondLastColumn": 0,
     "editor.wordWrap": "on",
     "extensions.autoUpdate" : false,
+    "macros": {
+        "runInREPL": [
+            "workbench.action.files.save",
+            "code-runner.runCustomCommand"
+        ]
+    },
     "terminal.integrated.fontFamily": "'Inconsolata', monospace",
     "terminal.integrated.fontSize": 16,
     "terminal.integrated.fontWeightBold": "normal",
@@ -39,7 +50,7 @@
         "terminal.foreground": "#ABB2BF",
         "terminalCursor.background": "#5C6370"
     },
-    "workbench.colorTheme": "One Dark Pro",
+    "workbench.colorTheme": "Solarized Dark",
     "workbench.activityBar.visible": false,
     "workbench.panel.defaultLocation": "right",
     "workbench.startupEditor": "newUntitledFile"
