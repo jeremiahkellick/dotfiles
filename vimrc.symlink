@@ -3,9 +3,11 @@
 syntax on
 
 " true color
-let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
-set termguicolors
+if $TERM == 'xterm-256color-italic' || $TERM == 'tmux-256color'
+    let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+    set termguicolors
+endif
 
 set tabstop=4 " number of visual spaces per TAB
 set softtabstop=4 " number of real spaces in tab when editing
@@ -16,7 +18,7 @@ set backspace=eol " don't allow backspacing past the start of an insert
 " scroll the viewport faster
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
-set colorcolumn=80 " show the 80 character limit line
+set colorcolumn=81 " show the 80 character limit line
 set number relativenumber " show relative line number and absolute at cursor
 set showcmd " show command in bottom bar
 set cursorline " highlight current line
@@ -106,7 +108,8 @@ function! VimuxToggleRunner()
 endfunction
 
 nnoremap <C-x> :VimuxToggleRunner<CR>
-let g:VimuxHeight=30
+let g:VimuxHeight=50
+let g:VimuxOrientation="h"
 
 command! Pry call Pry()
 
