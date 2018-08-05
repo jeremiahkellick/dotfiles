@@ -17,6 +17,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export LSCOLORS=exgxcxdxbxegedabagacad
 fi
 
+bind -x '"\C-k": clear'
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth

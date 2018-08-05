@@ -99,12 +99,12 @@ endfunction
 nnoremap <C-x> :VimuxToggleRunner<CR>
 let g:VimuxHeight=30
 
-command! Irb call Irb()
+command! Pry call Pry()
 
-function! Irb()
+function! Pry()
     w
-    call VimuxRunCommand("irb -r " . expand("%:p"))
+    call VimuxRunCommand("pry -r " . expand("%:p"))
     TmuxNavigateDown
 endfunction
 
-nnoremap <C-i> :Irb<CR>
+nnoremap <C-i> :Pry<CR>
