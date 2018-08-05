@@ -1,6 +1,12 @@
 " Longer explanations: https://dougblack.io/words/a-good-vimrc.html
 
 syntax on
+
+" true color
+let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+set termguicolors
+
 set tabstop=4 " number of visual spaces per TAB
 set softtabstop=4 " number of real spaces in tab when editing
 set shiftwidth=4
@@ -73,11 +79,13 @@ Plug 'benmills/vimux'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
-Plug 'altercation/vim-colors-solarized'
+Plug 'rakr/vim-one'
 call plug#end()
 
 set background=dark
-colorscheme solarized
+colorscheme one
+highlight Normal ctermbg=none
+hi Cursor guibg=#5f687a ctermbg=69 gui=NONE cterm=NONE
 
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
@@ -89,7 +97,8 @@ map <C-n> :NERDTreeToggle<CR>
 command VimuxToggleRunner :call VimuxToggleRunner()
 
 function! VimuxToggleRunner()
-    if !exists("g:VimuxRunnerIndex") || _VimuxHasRunner(g:VimuxRunnerIndex) == -1
+    let l:exists = !exists("g:VimuxRunnerIndex")
+    if l:exists || _VimuxHasRunner(g:VimuxRunnerIndex) == -1
         call VimuxOpenRunner()
     else
         call VimuxCloseRunner()

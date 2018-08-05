@@ -50,7 +50,7 @@
         "terminal.foreground": "#ABB2BF",
         "terminalCursor.background": "#5C6370"
     },
-    "workbench.colorTheme": "Solarized Dark",
+    "workbench.colorTheme": "One Dark Pro",
     "workbench.activityBar.visible": false,
     "workbench.panel.defaultLocation": "right",
     "workbench.startupEditor": "newUntitledFile"
