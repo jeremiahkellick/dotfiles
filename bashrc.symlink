@@ -69,6 +69,7 @@ alias rbo='rbenv bundler on'
 alias kd='keepass-pull.sh'
 alias ku='keepass-push.sh'
 alias ssh='TERM=xterm-256color ssh'
+alias t='tmux'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile

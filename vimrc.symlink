@@ -75,13 +75,14 @@ Plug 'chr4/nginx.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'kana/vim-textobj-user'
-Plug 'thabullfrog/vim-textobj-rubyblock'
+Plug 'jeremiahkellick/vim-textobj-rubyblock'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
 Plug 'rakr/vim-one'
+Plug 'jeremiahkellick/vim-turbux'
 call plug#end()
 
 set background=dark
