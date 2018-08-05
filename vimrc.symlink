@@ -1,8 +1,9 @@
 " Longer explanations: https://dougblack.io/words/a-good-vimrc.html
 
-syntax enable
+syntax on
 set tabstop=4 " number of visual spaces per TAB
 set softtabstop=4 " number of real spaces in tab when editing
+set shiftwidth=4
 set expandtab " tabs are converted to spaces
 set scrolloff=1 " always show one line above and one line below the cursor
 set backspace=eol " don't allow backspacing past the start of an insert
@@ -10,7 +11,6 @@ set backspace=eol " don't allow backspacing past the start of an insert
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 set colorcolumn=80 " show the 80 character limit line
-highlight ColorColumn ctermbg=7
 set number relativenumber " show relative line number and absolute at cursor
 set showcmd " show command in bottom bar
 set cursorline " highlight current line
@@ -23,8 +23,6 @@ set hlsearch " highlight matches
 let mapleader="," " leader is comma
 " turn off search highlight when space is pressed
 nnoremap <leader><space> :nohlsearch<CR>
-" toggle gundo
-nnoremap <leader>u :GundoToggle<CR>
 " disable arrow keys in normal mode
 map <up> <nop>
 map <down> <nop>
@@ -40,29 +38,26 @@ set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
+
 augroup configgroup
     autocmd!
-    autocmd VimEnter * highlight clear SignColumn
-    autocmd FileType php setlocal expandtab
-    autocmd FileType php setlocal tabstop=2
-    autocmd FileType php setlocal shiftwidth=2
-    autocmd FileType php setlocal softtabstop=2
-    autocmd FileType php setlocal list
-    autocmd FileType php setlocal listchars=tab:+\ ,eol:-
-    autocmd FileType php setlocal formatprg=par\ -w80\ -T4
     autocmd FileType ruby setlocal tabstop=2
-    autocmd FileType ruby setlocal shiftwidth=2
     autocmd FileType ruby setlocal softtabstop=2
+    autocmd FileType ruby setlocal shiftwidth=2
     autocmd FileType ruby setlocal commentstring=#\ %s
-    autocmd FileType eruby setlocal tabstop=2
-    autocmd FileType eruby setlocal shiftwidth=2
-    autocmd FileType eruby setlocal softtabstop=2
+    autocmd FileType html setlocal tabstop=2
+    autocmd FileType html setlocal softtabstop=2
+    autocmd FileType html setlocal shiftwidth=2
+    autocmd FileType css setlocal tabstop=2
+    autocmd FileType css setlocal softtabstop=2
+    autocmd FileType css setlocal shiftwidth=2
     autocmd FileType scss setlocal tabstop=2
-    autocmd FileType scss setlocal shiftwidth=2
     autocmd FileType scss setlocal softtabstop=2
+    autocmd FileType scss setlocal shiftwidth=2
+    autocmd FileType javascript setlocal tabstop=2
+    autocmd FileType javascript setlocal softtabstop=2
+    autocmd FileType javascript setlocal shiftwidth=2
     autocmd FileType python setlocal commentstring=#\ %s
-    autocmd BufEnter *.zsh-theme setlocal filetype=zsh
-    autocmd BufEnter Makefile setlocal noexpandtab
 augroup END
 
 runtime macros/matchit.vim " required by textobj-rubyblock
@@ -78,7 +73,11 @@ Plug 'benmills/vimux'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
+Plug 'altercation/vim-colors-solarized'
 call plug#end()
+
+set background=dark
+colorscheme solarized
 
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
@@ -109,4 +108,3 @@ function! Irb()
 endfunction
 
 nnoremap <C-i> :Irb<CR>
-
