@@ -24,3 +24,5 @@ if [[ $(tmux -V) = *"2.1"* ]]; then
 	rm -fr /tmp/tmux
     source ~/.bashrc
 fi
+
+cd ~/dotfiles
