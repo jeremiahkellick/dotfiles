@@ -7,7 +7,7 @@ if [ ! -x "$(command -v tmux)" ]; then
 		brew install tmux
 	fi
 fi
-echo $(which tmux)
+
 if [[ $(tmux -V) = *"2.1"* ]]; then
     echo "2"
     sudo apt-get -y remove tmux
