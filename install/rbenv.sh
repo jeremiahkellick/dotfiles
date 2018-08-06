@@ -26,3 +26,5 @@ if [ ! -d "$HOME/.rbenv/plugins/rbenv-bundler" ]; then
     cd ~/.rbenv/plugins/rbenv-bundler
     git checkout tags/1.00 -b 1.00
 fi
+
+cd ~/dotfiles
