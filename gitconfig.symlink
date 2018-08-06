@@ -3,3 +3,5 @@
 	email = jeremiah@jeremiahkellick.com
 [core]
 	excludesfile = ~/.gitignore
+[push]
+	default = simple
