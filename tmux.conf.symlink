@@ -1,5 +1,5 @@
-set -g default-terminal 'tmux-256color'
-set -as terminal-overrides ',xterm*:Tc:sitm=\E[3m'
+if-shell "uname | grep -q Darwin" "source-file .tmux-macos.conf" \
+                                  "source-file .tmux-linux.conf"
 set -g mouse on
 # unbind default prefix and set it to Ctrl+a
 unbind C-b
