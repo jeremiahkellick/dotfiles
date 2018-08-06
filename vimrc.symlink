@@ -23,7 +23,7 @@ set colorcolumn=81 " show the 80 character limit line
 set number relativenumber " show relative line number and absolute at cursor
 set showcmd " show command in bottom bar
 set cursorline " highlight current line
-filetype indent on " load filetype-specific indent files
+filetype plugin indent on " load filetype-specific plugin and indent files
 set wildmenu " visual autocomplete for command menu
 set lazyredraw " redraw only when we need to.
 set showmatch " highlight matching [{()}]
@@ -60,9 +60,6 @@ augroup configgroup
     autocmd FileType css setlocal tabstop=2
     autocmd FileType css setlocal softtabstop=2
     autocmd FileType css setlocal shiftwidth=2
-    autocmd FileType scss setlocal tabstop=2
-    autocmd FileType scss setlocal softtabstop=2
-    autocmd FileType scss setlocal shiftwidth=2
     autocmd FileType javascript setlocal tabstop=2
     autocmd FileType javascript setlocal softtabstop=2
     autocmd FileType javascript setlocal shiftwidth=2
@@ -79,9 +76,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'jeremiahkellick/vim-textobj-rubyblock'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
-Plug 'cakebaker/scss-syntax.vim'
 Plug 'tpope/vim-rails'
-Plug 'vim-ruby/vim-ruby'
 Plug 'rakr/vim-one'
 Plug 'jeremiahkellick/vim-turbux'
 call plug#end()
