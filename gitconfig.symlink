@@ -3,5 +3,6 @@
 	email = jeremiah@jeremiahkellick.com
 [core]
 	excludesfile = ~/.gitignore
+	editor = vim
 [push]
 	default = simple
