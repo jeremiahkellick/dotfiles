@@ -77,7 +77,7 @@ Plug 'chr4/nginx.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'kana/vim-textobj-user'
-Plug 'jeremiahkellick/vim-textobj-rubyblock'
+Plug 'jeremiahkellick/vim-textobj-rubyblock', { 'branch': 'mids' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
 Plug 'tpope/vim-rails'
@@ -89,6 +89,8 @@ set background=dark
 colorscheme one
 highlight Normal ctermbg=none
 hi Cursor guibg=#5f687a ctermbg=69 gui=NONE cterm=NONE
+
+let g:textobj_rubyblock_mids = 1
 
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
