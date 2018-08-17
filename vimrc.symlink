@@ -24,7 +24,7 @@ set splitright
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 set colorcolumn=81 " show the 80 character limit line
-set number relativenumber " show relative line number and absolute at cursor
+set number " show relative line number and absolute at cursor
 set showcmd " show command in bottom bar
 set cursorline " highlight current line
 filetype plugin indent on " load filetype-specific plugin and indent files
@@ -83,6 +83,7 @@ Plug 'benmills/vimux'
 Plug 'tpope/vim-rails'
 Plug 'rakr/vim-one'
 Plug 'jeremiahkellick/vim-turbux'
+Plug 'scrooloose/nerdcommenter'
 call plug#end()
 
 set background=dark
