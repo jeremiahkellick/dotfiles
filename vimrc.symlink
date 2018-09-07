@@ -84,6 +84,7 @@ Plug 'tpope/vim-rails'
 Plug 'rakr/vim-one'
 Plug 'jeremiahkellick/vim-turbux'
 Plug 'scrooloose/nerdcommenter'
+Plug 'jgdavey/vim-blockle'
 call plug#end()
 
 set background=dark
