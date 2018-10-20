@@ -1,10 +1,4 @@
 {
-    "[html]": {
-        "editor.tabSize": 2
-    },
-    "[ruby]": {
-        "editor.tabSize": 2
-    },
     "code-runner.customCommand": "pry -r $fullFileName",
     "code-runner.ignoreSelection": true,
     "code-runner.preserveFocus": false,
@@ -18,8 +12,10 @@
     "editor.minimap.enabled": false,
     "editor.rulers": [80],
     "editor.scrollBeyondLastColumn": 0,
+    "editor.tabSize": 2,
     "editor.wordWrap": "on",
     "extensions.autoUpdate" : false,
+    "javascript.suggestionActions.enabled": false,
     "macros": {
         "runInREPL": [
             "workbench.action.files.save",
