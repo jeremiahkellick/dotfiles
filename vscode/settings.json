@@ -10,12 +10,15 @@
     "editor.fontFamily": "'Inconsolata', monospace",
     "editor.fontSize": 16,
     "editor.minimap.enabled": false,
+    "editor.parameterHints.enabled": false,
     "editor.rulers": [80],
     "editor.scrollBeyondLastColumn": 0,
     "editor.tabSize": 2,
     "editor.wordWrap": "on",
     "extensions.autoUpdate" : false,
+    "files.trimTrailingWhitespace": true,
     "javascript.suggestionActions.enabled": false,
+    "javascript.validate.enable": false,
     "macros": {
         "runInREPL": [
             "workbench.action.files.save",
@@ -49,5 +52,7 @@
     "workbench.colorTheme": "One Dark Pro",
     "workbench.activityBar.visible": false,
     "workbench.panel.defaultLocation": "right",
-    "workbench.startupEditor": "newUntitledFile"
+    "workbench.startupEditor": "newUntitledFile",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "window.zoomLevel": 0
 }
