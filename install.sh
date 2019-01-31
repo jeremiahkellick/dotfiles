@@ -7,5 +7,6 @@ source install/curl.sh
 source install/tmux.sh
 source install/vim.sh
 source install/rbenv.sh
+source install/node.sh
 source install/vscode.sh
 source install/terminfos.sh
