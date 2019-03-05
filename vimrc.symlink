@@ -68,6 +68,7 @@ Plug 'jeremiahkellick/vim-turbux'
 Plug 'scrooloose/nerdcommenter'
 Plug 'jgdavey/vim-blockle'
 Plug 'leafgarland/typescript-vim'
+Plug 'mattn/emmet-vim'
 call plug#end()
 
 set background=dark
