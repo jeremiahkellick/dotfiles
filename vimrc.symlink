@@ -1,6 +1,20 @@
 set nocompatible
 if filereadable("/usr/share/vim/google/google.vim")
   source /usr/share/vim/google/google.vim
+
+  Glug youcompleteme-google
+  Glug codefmt
+  Glug codefmt-google
+
+  nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
+  if !exists("g:ycm_semantic_triggers")
+     let g:ycm_semantic_triggers = {}
+  endif
+  let g:ycm_semantic_triggers['typescript'] = ['.']
+
+  augroup autoformat_settings
+    au FileType typescript AutoFormatBuffer clang-format
+  augroup END
 endif
 filetype plugin indent on
 syntax on
