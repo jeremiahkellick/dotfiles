@@ -1,5 +1,8 @@
-" Longer explanations: https://dougblack.io/words/a-good-vimrc.html
-
+set nocompatible
+if filereadable("/usr/share/vim/google/google.vim")
+  source /usr/share/vim/google/google.vim
+endif
+filetype plugin indent on
 syntax on
 
 " true color
@@ -27,7 +30,6 @@ set colorcolumn=81 " show the 80 character limit line
 set number " show relative line number and absolute at cursor
 set showcmd " show command in bottom bar
 set cursorline " highlight current line
-filetype plugin indent on " load filetype-specific plugin and indent files
 set wildmenu " visual autocomplete for command menu
 set lazyredraw " redraw only when we need to.
 set showmatch " highlight matching [{()}]
