@@ -4,13 +4,13 @@ syntax on
 
 " true color
 if $TERM == 'xterm-256color-italic' || $TERM == 'tmux-256color'
-    let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
-    let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
-    set termguicolors
+  let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
 endif
 
 if $TERM == 'xterm-256color'
-    set termguicolors
+  set termguicolors
 endif
 
 set tabstop=2 " number of visual spaces per TAB
@@ -88,12 +88,12 @@ map <C-n> :NERDTreeToggle<CR>
 command VimuxToggleRunner :call VimuxToggleRunner()
 
 function! VimuxToggleRunner()
-    let l:exists = !exists("g:VimuxRunnerIndex")
-    if l:exists || _VimuxHasRunner(g:VimuxRunnerIndex) == -1
-        call VimuxOpenRunner()
-    else
-        call VimuxCloseRunner()
-    endif
+  let l:exists = !exists("g:VimuxRunnerIndex")
+  if l:exists || _VimuxHasRunner(g:VimuxRunnerIndex) == -1
+    call VimuxOpenRunner()
+  else
+    call VimuxCloseRunner()
+  endif
 endfunction
 
 nnoremap <C-x> :VimuxToggleRunner<CR>
@@ -103,9 +103,9 @@ let g:VimuxOrientation="h"
 command! Pry call Pry()
 
 function! Pry()
-    w
-    call VimuxRunCommand("pry -r " . expand("%:p"))
-    TmuxNavigateDown
+  w
+  call VimuxRunCommand("pry -r " . expand("%:p"))
+  TmuxNavigateDown
 endfunction
 
 nnoremap <C-i> :Pry<CR>
