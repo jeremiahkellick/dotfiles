@@ -75,8 +75,6 @@ call plug#end()
 
 set background=dark
 colorscheme one
-highlight Normal ctermbg=none
-hi Cursor guibg=#5f687a ctermbg=69 gui=NONE cterm=NONE
 
 let g:textobj_rubyblock_mids = 1
 
