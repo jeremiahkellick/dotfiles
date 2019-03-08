@@ -23,12 +23,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   install_vscode=true
 fi
 
-read -p "Would you like to install test [y/n]? " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-  install_test=true
-fi
-
 source install/symlink.sh
 source install/brew.sh
 source install/update.sh
@@ -46,10 +40,6 @@ fi
 
 if [ "$install_vscode" = true ]; then
   source install/vscode.sh
-fi
-
-if [ "$install_test" = true ]; then
-  echo "TEST"
 fi
 
 source install/terminfos.sh
