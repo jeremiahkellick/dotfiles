@@ -1,58 +1,45 @@
 {
-    "code-runner.customCommand": "pry -r $fullFileName",
-    "code-runner.ignoreSelection": true,
-    "code-runner.preserveFocus": false,
-    "code-runner.runInTerminal": true,
-    "code-runner.saveFileBeforeRun": true,
-    "editor.acceptSuggestionOnCommitCharacter": false,
-    "editor.acceptSuggestionOnEnter": "off",
-    "editor.folding": false,
-    "editor.fontFamily": "'Inconsolata', monospace",
-    "editor.fontSize": 16,
-    "editor.minimap.enabled": false,
-    "editor.parameterHints.enabled": false,
-    "editor.rulers": [80],
-    "editor.scrollBeyondLastColumn": 0,
-    "editor.tabSize": 2,
-    "editor.wordWrap": "on",
-    "extensions.autoUpdate" : false,
-    "files.trimTrailingWhitespace": true,
-    "javascript.suggestionActions.enabled": false,
-    "javascript.validate.enable": false,
-    "macros": {
-        "runInREPL": [
-            "workbench.action.files.save",
-            "code-runner.runCustomCommand"
-        ]
-    },
-    "terminal.integrated.fontFamily": "'Inconsolata', monospace",
-    "terminal.integrated.fontSize": 16,
-    "terminal.integrated.fontWeightBold": "normal",
-    "window.restoreWindows": "none",
-    "workbench.colorCustomizations": {
-        "terminal.ansiBlack": "#1E2127",
-        "terminal.ansiBlue": "#61AFEF",
-        "terminal.ansiBrightBlack": "#5C6370",
-        "terminal.ansiBrightBlue": "#61AFEF",
-        "terminal.ansiBrightCyan": "#56B6C2",
-        "terminal.ansiBrightGreen": "#98C379",
-        "terminal.ansiBrightMagenta": "#C678DD",
-        "terminal.ansiBrightRed": "#E06C75",
-        "terminal.ansiBrightWhite": "#FFFFFF",
-        "terminal.ansiBrightYellow": "#D19A66",
-        "terminal.ansiCyan": "#56B6C2",
-        "terminal.ansiGreen": "#98C379",
-        "terminal.ansiMagenta": "#C678DD",
-        "terminal.ansiRed": "#E06C75",
-        "terminal.ansiWhite": "#ABB2BF",
-        "terminal.ansiYellow": "#D19A66",
-        "terminal.foreground": "#ABB2BF",
-        "terminalCursor.background": "#5C6370"
-    },
-    "workbench.colorTheme": "One Dark Pro",
-    "workbench.activityBar.visible": false,
-    "workbench.panel.defaultLocation": "right",
-    "workbench.startupEditor": "newUntitledFile",
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "window.zoomLevel": 0
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "editor.detectIndentation": false,
+  "editor.fontFamily": "'Inconsolata', monospace",
+  "editor.fontSize": 16,
+  "editor.minimap.enabled": false,
+  "editor.renderFinalNewline": false,
+  "editor.rulers": [80],
+  "editor.tabSize": 2,
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "window.restoreWindows": "none",
+  "workbench.startupEditor": "newUntitledFile",
+  "explorer.confirmDelete": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "explorer.confirmDragAndDrop": false,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "workbench.colorTheme": "One Dark Pro",
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.acceptSuggestionOnEnter": "off",
+  "javascript.updateImportsOnFileMove.enabled": "always"
 }
