@@ -76,14 +76,14 @@ Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
-Plug 'rakr/vim-one'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'leafgarland/typescript-vim'
 Plug 'mattn/emmet-vim'
 call plug#end()
 
 set background=dark
-colorscheme one
+colorscheme onehalfdark
 
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
