@@ -38,7 +38,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
-  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorTheme": "onehalf-dark",
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.acceptSuggestionOnEnter": "off",
   "javascript.updateImportsOnFileMove.enabled": "always"

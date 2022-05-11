@@ -13,6 +13,9 @@ for file in $linkables ; do
         if [ -f "$target" ]; then
             rm "$target"
         fi
+        if [ -d "$target" ]; then
+            rm -r "$target"
+        fi
         echo "Creating symlink for $file"
         ln -s "$file" "$target"
     fi

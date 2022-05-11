@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [ ! -x "$(command -v nvm)" ]; then
-    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh \
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh \
         | bash
 
     export NVM_DIR="$HOME/.nvm"

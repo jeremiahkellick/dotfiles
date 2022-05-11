@@ -1,8 +1,8 @@
 [user]
-	name = Jeremiah Kellick
-	email = jeremiah@jeremiahkellick.com
+  name = Jeremiah Kellick
+  email = jeremiah@jeremiahkellick.com
 [core]
-	excludesfile = ~/.gitignore
-	editor = vim
+  excludesfile = ~/.gitignore
+  editor = vim
 [push]
-	default = simple
+  default = simple

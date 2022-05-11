@@ -74,15 +74,10 @@ call plug#begin('~/.vim/plugged')
 Plug 'chr4/nginx.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'kana/vim-textobj-user'
-Plug 'jeremiahkellick/vim-textobj-rubyblock', { 'branch': 'mids' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
-Plug 'tpope/vim-rails'
 Plug 'rakr/vim-one'
-Plug 'jeremiahkellick/vim-turbux'
 Plug 'scrooloose/nerdcommenter'
-Plug 'jgdavey/vim-blockle'
 Plug 'leafgarland/typescript-vim'
 Plug 'mattn/emmet-vim'
 call plug#end()
@@ -90,36 +85,9 @@ call plug#end()
 set background=dark
 colorscheme one
 
-let g:textobj_rubyblock_mids = 1
-
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 let g:ctrlp_use_caching = 0
 
 map <C-n> :NERDTreeToggle<CR>
-
-command VimuxToggleRunner :call VimuxToggleRunner()
-
-function! VimuxToggleRunner()
-  let l:exists = !exists("g:VimuxRunnerIndex")
-  if l:exists || _VimuxHasRunner(g:VimuxRunnerIndex) == -1
-    call VimuxOpenRunner()
-  else
-    call VimuxCloseRunner()
-  endif
-endfunction
-
-nnoremap <C-x> :VimuxToggleRunner<CR>
-let g:VimuxHeight=50
-let g:VimuxOrientation="h"
-
-command! Pry call Pry()
-
-function! Pry()
-  w
-  call VimuxRunCommand("pry -r " . expand("%:p"))
-  TmuxNavigateDown
-endfunction
-
-nnoremap <C-i> :Pry<CR>
