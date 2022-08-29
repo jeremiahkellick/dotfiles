@@ -11,7 +11,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     code_path="$HOME/Library/Application Support/Code/User"
 fi
 
-files=$( find -H "$HOME/dotfiles/vscode" -maxdepth 3 -type f )
+files=$( find -H "$HOME/dotfiles/vscode" -maxdepth 8 -type f )
 
 mkdir -p $code_path
 for file in $files ; do

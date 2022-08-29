@@ -1,0 +1,25 @@
+{
+	"name": "jkellick-one-dark",
+	"displayName": "jkellick-one-dark",
+	"description": "Atom One Dark without red variable names",
+	"version": "1.0.0",
+	"engines": {
+		"vscode": "^1.44.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "jkellick-one-dark",
+				"uiTheme": "vs-dark",
+				"path": "./themes/jkellick-one-dark-color-theme.json"
+			}
+		]
+	},
+	"galleryBanner": {
+		"color": "#282c34",
+		"theme": "dark"
+	}
+}
