@@ -25,7 +25,7 @@ for file in $files ; do
     fi
 done
 
-extensions=$( find -H "$HOME/dotfiles/vscode/extensions" -mindepth 1 -maxdepth 1 -type d )
+extensions=$( find -H "$HOME/dotfiles/vscode-extensions" -mindepth 1 -maxdepth 1 -type d )
 
 for ext in $extensions ; do
     target="$HOME/.vscode/extensions/$( basename "$ext" )"
