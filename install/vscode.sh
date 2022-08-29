@@ -24,3 +24,15 @@ for file in $files ; do
         ln -s "$file" "$target"
     fi
 done
+
+extensions=$( find -H "$HOME/dotfiles/vscode/extensions" -mindepth 1 -maxdepth 1 -type d )
+
+for ext in $extensions ; do
+    target="$HOME/.vscode/extensions/$( basename "$ext" )"
+    if [ ! -L "$target" ]; then
+        if [ -d "$target" ]; then
+            rm -r "$target"
+        fi
+        ln -s "$ext" "$target"
+    fi
+done
