@@ -1,15 +1,7 @@
 #!/usr/bin/env bash
 
-install_rbenv=false
 install_node=false
 install_vscode=false
-install_test=false
-
-read -p "Would you like to install rbenv [y/n]? " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-  install_rbenv=true
-fi
 
 read -p "Would you like to install node [y/n]? " -n 1 -r
 echo
@@ -29,10 +21,6 @@ source install/update.sh
 source install/curl.sh
 source install/tmux.sh
 source install/vim.sh
-
-if [ "$install_rbenv" = true ]; then
-  source install/rbenv.sh
-fi
 
 if [ "$install_node" = true ]; then
   source install/node.sh
