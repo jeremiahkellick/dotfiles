@@ -5,6 +5,7 @@
   },
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.acceptSuggestionOnEnter": "off",
+  "editor.bracketPairColorization.enabled": false,
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },
@@ -36,6 +37,8 @@
     "editor.formatOnSave": true
   },
   "security.workspace.trust.untrustedFiles": "open",
+  "terminal.integrated.fontFamily":  "'Inconsolata', monospace",
+  "terminal.integrated.fontSize": 16,
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
