@@ -45,6 +45,6 @@
   },
   "typescript.updateImportsOnFileMove.enabled": "always",
   "window.restoreWindows": "none",
-  "workbench.colorTheme": "jkellick-one-dark"
+  "workbench.colorTheme": "jkellick-one-dark",
   "workbench.startupEditor": "newUntitledFile"
 }
