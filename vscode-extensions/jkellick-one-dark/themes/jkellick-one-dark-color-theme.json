@@ -266,7 +266,7 @@
         "variable"
       ],
       "settings": {
-        "foreground": "#DCDFE4"
+        "foreground": "#9FC7EA"
       }
     },
     {
@@ -476,7 +476,7 @@
         "entity.name.tag"
       ],
       "settings": {
-        "foreground": "#61AFEF"
+        "foreground": "#9FC7EA"
       }
     },
     {
@@ -531,7 +531,7 @@
         "meta.definition.variable"
       ],
       "settings": {
-        "foreground": "#DCDFE4"
+        "foreground": "#9FC7EA"
       }
     },
     {
@@ -661,7 +661,7 @@
         "markup.heading"
       ],
       "settings": {
-        "foreground": "#DCDFE4"
+        "foreground": "#9FC7EA"
       }
     },
     {
@@ -813,7 +813,7 @@
         "source.elixir embedded.source.empty"
       ],
       "settings": {
-        "foreground": "#DCDFE4"
+        "foreground": "#9FC7EA"
       }
     },
     {
@@ -822,7 +822,7 @@
         "source.elixir readwrite.module punctuation"
       ],
       "settings": {
-        "foreground": "#E06C75"
+        "foreground": "#9FC7EA"
       }
     },
     {
@@ -898,7 +898,7 @@
         "source.ini keyword.other.definition.ini"
       ],
       "settings": {
-        "foreground": "#DCDFE4"
+        "foreground": "#9FC7EA"
       }
     },
     {
@@ -934,7 +934,7 @@
         "source.java-properties meta.key-pair"
       ],
       "settings": {
-        "foreground": "#DCDFE4"
+        "foreground": "#9FC7EA"
       }
     },
     {
@@ -994,7 +994,7 @@
         "source.json meta.structure.dictionary.json > string.quoted.json"
       ],
       "settings": {
-        "foreground": "#DCDFE4"
+        "foreground": "#9FC7EA"
       }
     },
     {
@@ -1003,7 +1003,7 @@
         "source.json meta.structure.dictionary.json > string.quoted.json > punctuation.string"
       ],
       "settings": {
-        "foreground": "#DCDFE4"
+        "foreground": "#9FC7EA"
       }
     },
     {
@@ -1034,7 +1034,7 @@
         "ng.interpolation"
       ],
       "settings": {
-        "foreground": "#DCDFE4"
+        "foreground": "#9FC7EA"
       }
     },
     {
@@ -1053,7 +1053,7 @@
         "ng.interpolation function"
       ],
       "settings": {
-        "foreground": "#DCDFE4"
+        "foreground": "#9FC7EA"
       }
     },
     {
@@ -1199,14 +1199,14 @@
       "name": "[VSCODE-CUSTOM] JSON Property Name",
       "scope": "support.type.property-name.json",
       "settings": {
-        "foreground": "#DCDFE4"
+        "foreground": "#9FC7EA"
       }
     },
     {
       "name": "[VSCODE-CUSTOM] JSON Punctuation for Property Name",
       "scope": "support.type.property-name.json punctuation",
       "settings": {
-        "foreground": "#DCDFE4"
+        "foreground": "#9FC7EA"
       }
     },
     {
@@ -1248,7 +1248,7 @@
         "support.variable.dom.ts"
       ],
       "settings": {
-        "foreground": "#DCDFE4"
+        "foreground": "#9FC7EA"
       }
     },
     {
@@ -1258,7 +1258,7 @@
         "support.variable.property.dom.ts"
       ],
       "settings": {
-        "foreground": "#DCDFE4"
+        "foreground": "#9FC7EA"
       }
     },
     {
@@ -1312,7 +1312,7 @@
         "support.variable.property.tsx"
       ],
       "settings": {
-        "foreground": "#DCDFE4"
+        "foreground": "#9FC7EA"
       }
     },
     {
@@ -1406,7 +1406,7 @@
         "source.tsx support.variable"
       ],
       "settings": {
-        "foreground": "#DCDFE4"
+        "foreground": "#9FC7EA"
       }
     },
     {
@@ -1459,7 +1459,7 @@
         "constant.language.import-export-all.ts"
       ],
       "settings": {
-        "foreground": "#DCDFE4"
+        "foreground": "#9FC7EA"
       }
     },
     {
@@ -1493,7 +1493,7 @@
         "variable.other.readwrite.alias.tsx"
       ],
       "settings": {
-        "foreground": "#DCDFE4"
+        "foreground": "#9FC7EA"
       }
     },
     {
@@ -1515,7 +1515,7 @@
         "meta.export.default.ts variable.other.readwrite.ts"
       ],
       "settings": {
-        "foreground": "#DCDFE4"
+        "foreground": "#9FC7EA"
       }
     },
     {
@@ -1624,7 +1624,7 @@
         "support.type.object.module.tsx"
       ],
       "settings": {
-        "foreground": "#DCDFE4"
+        "foreground": "#9FC7EA"
       }
     },
     {
@@ -1713,7 +1713,7 @@
         "meta.object-literal.key.ts"
       ],
       "settings": {
-        "foreground": "#DCDFE4"
+        "foreground": "#9FC7EA"
       }
     },
     {
@@ -1741,7 +1741,7 @@
       "name": "[VSCODE-CUSTOM] Python Magic",
       "scope": "support.variable.magic.python",
       "settings": {
-        "foreground": "#DCDFE4"
+        "foreground": "#9FC7EA"
       }
     },
     {
@@ -1769,7 +1769,7 @@
       "name": "[VSCODE-CUSTOM] CSharp Fields",
       "scope": "entity.name.variable.field.cs",
       "settings": {
-        "foreground": "#DCDFE4"
+        "foreground": "#9FC7EA"
       }
     },
     {
@@ -1874,7 +1874,7 @@
       "name": "[VSCODE-CUSTOM] Shell Variables Punctuation Definition",
       "scope": "punctuation.definition.variable.shell",
       "settings": {
-        "foreground": "#DCDFE4"
+        "foreground": "#9FC7EA"
       }
     },
     {
@@ -1895,7 +1895,7 @@
       "name": "[VSCODE-CUSTOM] Sass Punctuation for key-value",
       "scope": "punctuation.separator.key-value.scss",
       "settings": {
-        "foreground": "#DCDFE4"
+        "foreground": "#9FC7EA"
       }
     },
     {
@@ -1923,14 +1923,14 @@
       "name": "[VSCODE-CUSTOM] Markdown headings",
       "scope": "entity.name.section.markdown",
       "settings": {
-        "foreground": "#DCDFE4"
+        "foreground": "#9FC7EA"
       }
     },
     {
       "name": "[VSCODE-CUSTOM] Markdown heading Punctuation Definition",
       "scope": "punctuation.definition.heading.markdown",
       "settings": {
-        "foreground": "#DCDFE4"
+        "foreground": "#9FC7EA"
       }
     },
     {
@@ -1958,7 +1958,7 @@
       "name": "[VSCODE-CUSTOM] Markdown List Punctuation Definition",
       "scope": "beginning.punctuation.definition.list.markdown",
       "settings": {
-        "foreground": "#DCDFE4"
+        "foreground": "#9FC7EA"
       }
     },
     {
@@ -2011,7 +2011,7 @@
       "name": "[VSCODE-CUSTOM] Ruby Punctuation Separator Variable",
       "scope": "punctuation.separator.variable.ruby",
       "settings": {
-        "foreground": "#DCDFE4"
+        "foreground": "#9FC7EA"
       }
     },
     {
@@ -2032,7 +2032,7 @@
       "name": "[VSCODE-CUSTOM] PHP Punctuation Variable Definition",
       "scope": "punctuation.definition.variable.php",
       "settings": {
-        "foreground": "#DCDFE4"
+        "foreground": "#9FC7EA"
       }
     },
     {
