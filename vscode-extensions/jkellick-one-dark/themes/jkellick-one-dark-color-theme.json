@@ -476,7 +476,7 @@
         "entity.name.tag"
       ],
       "settings": {
-        "foreground": "#DCDFE4"
+        "foreground": "#61AFEF"
       }
     },
     {
@@ -576,7 +576,7 @@
         "meta.tag"
       ],
       "settings": {
-        "foreground": "#DCDFE4"
+        "foreground": "#61AFEF"
       }
     },
     {
