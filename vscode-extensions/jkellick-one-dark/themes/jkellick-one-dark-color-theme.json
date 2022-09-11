@@ -279,15 +279,6 @@
       }
     },
     {
-      "name": "Variable Parameter",
-      "scope": [
-        "variable.parameter"
-      ],
-      "settings": {
-        "foreground": "#DCDFE4"
-      }
-    },
-    {
       "name": "String",
       "scope": [
         "string"
@@ -1044,7 +1035,7 @@
         "ng.interpolation.end"
       ],
       "settings": {
-        "foreground": "#61AFEF"
+        "foreground": "#E06C75"
       }
     },
     {
@@ -1081,17 +1072,7 @@
         "ng.interpolation bracket"
       ],
       "settings": {
-        "foreground": "#DCDFE4"
-      }
-    },
-    {
-      "name": "Ng Pipe,ng Operator",
-      "scope": [
-        "ng.pipe",
-        "ng.operator"
-      ],
-      "settings": {
-        "foreground": "#DCDFE4"
+        "foreground": "#E06C75"
       }
     },
     {
@@ -1122,10 +1103,9 @@
       }
     },
     {
-      "name": "Ng Attribute With Value String Begin,ng Attribute With Value String End",
+      "name": "Ng Binding String Begin,Ng Binding String End",
       "scope": [
-        "ng.attribute-with-value string.begin",
-        "ng.attribute-with-value string.end"
+        "meta.ng-binding.property.html string.quoted.html"
       ],
       "settings": {
         "foreground": "#DCDFE4"
@@ -1228,17 +1208,6 @@
       ],
       "settings": {
         "foreground": "#56B6C2"
-      }
-    },
-    {
-      "name": "[VSCODE-CUSTOM] JS/TS Variable Other Readwrite",
-      "scope": [
-        "variable.other.readwrite.js",
-        "variable.other.readwrite.ts",
-        "variable.other.readwrite.tsx"
-      ],
-      "settings": {
-        "foreground": "#DCDFE4"
       }
     },
     {
@@ -1388,17 +1357,6 @@
       }
     },
     {
-      "name": "[VSCODE-CUSTOM] JS/TS Array variables",
-      "scope": [
-        "meta.array-binding-pattern-variable.js variable.other.readwrite.js",
-        "meta.array-binding-pattern-variable.ts variable.other.readwrite.ts",
-        "meta.array-binding-pattern-variable.tsx variable.other.readwrite.tsx"
-      ],
-      "settings": {
-        "foreground": "#D19A66"
-      }
-    },
-    {
       "name": "[VSCODE-CUSTOM] JS/TS Support Variables",
       "scope": [
         "source.js support.variable",
@@ -1473,30 +1431,6 @@
       }
     },
     {
-      "name": "[VSCODE-CUSTOM] JS/TS Keyword Control As",
-      "scope": [
-        "keyword.control.as.js",
-        "keyword.control.as.ts",
-        "keyword.control.as.jsx",
-        "keyword.control.as.tsx"
-      ],
-      "settings": {
-        "foreground": "#DCDFE4"
-      }
-    },
-    {
-      "name": "[VSCODE-CUSTOM] JS/TS Variable Alias",
-      "scope": [
-        "variable.other.readwrite.alias.js",
-        "variable.other.readwrite.alias.ts",
-        "variable.other.readwrite.alias.jsx",
-        "variable.other.readwrite.alias.tsx"
-      ],
-      "settings": {
-        "foreground": "#9FC7EA"
-      }
-    },
-    {
       "name": "[VSCODE-CUSTOM] JS/TS Constants",
       "scope": [
         "variable.other.constant.js",
@@ -1506,16 +1440,6 @@
       ],
       "settings": {
         "foreground": "#D19A66"
-      }
-    },
-    {
-      "name": "[VSCODE-CUSTOM] JS/TS Export Variable",
-      "scope": [
-        "meta.export.default.js variable.other.readwrite.js",
-        "meta.export.default.ts variable.other.readwrite.ts"
-      ],
-      "settings": {
-        "foreground": "#9FC7EA"
       }
     },
     {
@@ -1530,18 +1454,6 @@
       }
     },
     {
-      "name": "[VSCODE-CUSTOM] JS/TS Import equals",
-      "scope": [
-        "source.js meta.import-equals.external.js keyword.operator",
-        "source.jsx meta.import-equals.external.jsx keyword.operator",
-        "source.ts meta.import-equals.external.ts keyword.operator",
-        "source.tsx meta.import-equals.external.tsx keyword.operator"
-      ],
-      "settings": {
-        "foreground": "#DCDFE4"
-      }
-    },
-    {
       "name": "[VSCODE-CUSTOM] JS/TS Type Module",
       "scope": "entity.name.type.module.js,entity.name.type.module.ts,entity.name.type.module.jsx,entity.name.type.module.tsx",
       "settings": {
@@ -1549,8 +1461,8 @@
       }
     },
     {
-      "name": "[VSCODE-CUSTOM] JS/TS Meta Class",
-      "scope": "meta.class.js,meta.class.ts,meta.class.jsx,meta.class.tsx",
+      "name": "[VSCODE-CUSTOM] JS/TS Meta decorator",
+      "scope": "meta.decorator.ts,meta.decorator.tsx",
       "settings": {
         "foreground": "#DCDFE4"
       }
@@ -1564,55 +1476,7 @@
         "meta.definition.property.tsx variable"
       ],
       "settings": {
-        "foreground": "#DCDFE4"
-      }
-    },
-    {
-      "name": "[VSCODE-CUSTOM] JS/TS Meta Type Parameters Type",
-      "scope": [
-        "meta.type.parameters.js support.type",
-        "meta.type.parameters.jsx support.type",
-        "meta.type.parameters.ts support.type",
-        "meta.type.parameters.tsx support.type"
-      ],
-      "settings": {
-        "foreground": "#DCDFE4"
-      }
-    },
-    {
-      "name": "[VSCODE-CUSTOM] JS/TS Meta Tag Keyword Operator",
-      "scope": [
-        "source.js meta.tag.js keyword.operator",
-        "source.jsx meta.tag.jsx keyword.operator",
-        "source.ts meta.tag.ts keyword.operator",
-        "source.tsx meta.tag.tsx keyword.operator"
-      ],
-      "settings": {
-        "foreground": "#DCDFE4"
-      }
-    },
-    {
-      "name": "[VSCODE-CUSTOM] JS/TS Meta Tag Punctuation",
-      "scope": [
-        "meta.tag.js punctuation.section.embedded",
-        "meta.tag.jsx punctuation.section.embedded",
-        "meta.tag.ts punctuation.section.embedded",
-        "meta.tag.tsx punctuation.section.embedded"
-      ],
-      "settings": {
-        "foreground": "#DCDFE4"
-      }
-    },
-    {
-      "name": "[VSCODE-CUSTOM] JS/TS Meta Array Literal Variable",
-      "scope": [
-        "meta.array.literal.js variable",
-        "meta.array.literal.jsx variable",
-        "meta.array.literal.ts variable",
-        "meta.array.literal.tsx variable"
-      ],
-      "settings": {
-        "foreground": "#E5C07B"
+        "foreground": "#9FC7EA"
       }
     },
     {
@@ -1697,16 +1561,6 @@
       }
     },
     {
-      "name": "[VSCODE-CUSTOM] JS/TS Variable Other Object",
-      "scope": [
-        "variable.other.object.js",
-        "variable.other.object.ts"
-      ],
-      "settings": {
-        "foreground": "#DCDFE4"
-      }
-    },
-    {
       "name": "[VSCODE-CUSTOM] JS/TS Meta Object Literal Key",
       "scope": [
         "meta.object-literal.key.js",
@@ -1782,20 +1636,6 @@
     {
       "name": "[VSCODE-CUSTOM] CSharp Variables",
       "scope": "variable.other.readwrite.cs",
-      "settings": {
-        "foreground": "#DCDFE4"
-      }
-    },
-    {
-      "name": "[VSCODE-CUSTOM] CSharp Variables Other",
-      "scope": "variable.other.object.cs",
-      "settings": {
-        "foreground": "#DCDFE4"
-      }
-    },
-    {
-      "name": "[VSCODE-CUSTOM] CSharp Property Other",
-      "scope": "variable.other.object.property.cs",
       "settings": {
         "foreground": "#DCDFE4"
       }
