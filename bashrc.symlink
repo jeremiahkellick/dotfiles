@@ -95,4 +95,4 @@ if [ -d "$HOME/.rbenv/bin" ]; then
   eval "$(rbenv init -)"
 fi
 
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/jk_repo/bin:$HOME/jk_repo/build:$PATH"
