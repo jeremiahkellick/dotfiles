@@ -29,11 +29,6 @@ if [ -n "$ZSH_VERSION" ]; then
 
   autoload -Uz compinit && compinit
   autoload -Uz colors && colors
-
-  if [ -f $HOME/.git-prompt.sh ]; then
-      . $HOME/.git-prompt.sh
-      precmd () { __git_ps1 "%{$fg[green]%}%n@%m %{$fg[blue]%}%~" " $%{$reset_color%} " }
-  fi
 else # bash only
   bind -x '"\C-n": printf "\33[H\33[2J"'
 
