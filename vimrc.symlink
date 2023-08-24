@@ -33,7 +33,12 @@ endif
 set tabstop=2 " number of visual spaces per TAB
 set softtabstop=2 " number of real spaces in tab when editing
 set shiftwidth=2
+au FileType c,cpp setl tabstop=4 softtabstop=4 shiftwidth=4
+
 set expandtab " tabs are converted to spaces
+set autoindent
+set smartindent
+
 set scrolloff=1 " always show one line above and one line below the cursor
 set backspace=eol " don't allow backspacing past the start of an insert
 set splitright
