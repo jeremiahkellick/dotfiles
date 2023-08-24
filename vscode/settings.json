@@ -18,7 +18,7 @@
   "editor.fontFamily": "'Inconsolata', monospace",
   "editor.fontSize": 16,
   "editor.minimap.enabled": false,
-  "editor.renderFinalNewline": false,
+  "editor.renderFinalNewline": "off",
   "editor.rulers": [80],
   "editor.scrollBeyondLastColumn": 2,
   "editor.tabSize": 2,
