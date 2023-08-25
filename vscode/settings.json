@@ -7,6 +7,7 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true
     },
+    "diffEditor.ignoreTrimWhitespace": false,
     "editor.acceptSuggestionOnCommitCharacter": false,
     "editor.acceptSuggestionOnEnter": "off",
     "editor.bracketPairColorization.enabled": false,
@@ -18,7 +19,7 @@
     "editor.fontSize": 16,
     "editor.minimap.enabled": false,
     "editor.renderFinalNewline": "off",
-    "editor.rulers": [80],
+    "editor.rulers": [100],
     "editor.scrollBeyondLastColumn": 2,
     "editor.tabSize": 4,
     "explorer.confirmDelete": false,
@@ -33,25 +34,18 @@
         "editor.formatOnSave": true,
         "editor.tabSize": 2
     },
-    "[javascript]": {
+    "[javascript][json][jsonc][typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true
     },
     "javascript.updateImportsOnFileMove.enabled": "always",
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true
-    },
     "remote.SSH.remotePlatform": {
         "shark.ics.cs.cmu.edu": "linux"
     },
     "security.workspace.trust.untrustedFiles": "open",
-    "terminal.integrated.fontFamily":  "'Inconsolata', monospace",
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "terminal.integrated.fontFamily": "'Inconsolata', monospace",
     "terminal.integrated.fontSize": 16,
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true
-    },
     "typescript.updateImportsOnFileMove.enabled": "always",
     "window.restoreWindows": "none",
     "workbench.colorTheme": "jkellick-one-dark",
