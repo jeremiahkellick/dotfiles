@@ -20,54 +20,54 @@ fi
 
 # zsh-only
 if [ -n "$ZSH_VERSION" ]; then
-  bindkey "^N" clear-screen
+    bindkey "^N" clear-screen
 
-  setopt HIST_IGNORE_DUPS INC_APPEND_HISTORY
+    setopt HIST_IGNORE_DUPS INC_APPEND_HISTORY
 
-  HISTSIZE=1000000
-  SAVEHIST=10000
+    HISTSIZE=1000000
+    SAVEHIST=10000
 
-  autoload -Uz compinit && compinit
-  autoload -Uz colors && colors
+    autoload -Uz compinit && compinit
+    autoload -Uz colors && colors
 else # bash only
-  bind -x '"\C-n": printf "\33[H\33[2J"'
+    bind -x '"\C-n": printf "\33[H\33[2J"'
 
-  HISTFILESIZE=1000000
-  HISTSIZE=10000
+    HISTFILESIZE=1000000
+    HISTSIZE=10000
 
-  # don't put duplicate lines or lines starting with space in the history.
-  # See bash(1) for more options
-  HISTCONTROL=ignoreboth
+    # don't put duplicate lines or lines starting with space in the history.
+    # See bash(1) for more options
+    HISTCONTROL=ignoreboth
 
-  # append to the history file, don't overwrite it
-  shopt -s histappend
+    # append to the history file, don't overwrite it
+    shopt -s histappend
 
-  # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+    # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 
-  # check the window size after each command and, if necessary,
-  # update the values of LINES and COLUMNS.
-  shopt -s checkwinsize
+    # check the window size after each command and, if necessary,
+    # update the values of LINES and COLUMNS.
+    shopt -s checkwinsize
 
-  # If set, the pattern "**" used in a pathname expansion context will
-  # match all files and zero or more directories and subdirectories.
-  shopt -s globstar
+    # If set, the pattern "**" used in a pathname expansion context will
+    # match all files and zero or more directories and subdirectories.
+    shopt -s globstar
 
-  if [ -f $HOME/.git-completion.bash ] && [ -f $HOME/.git-prompt.sh ]; then
-      . $HOME/.git-completion.bash
-      . $HOME/.git-prompt.sh
-      PS1='\[\033[0;32m\]\u@\h \[\033[0;34m\]\w$(__git_ps1 " (%s)") \$\[\e[00m\] '
-  fi
+    if [ -f $HOME/.git-completion.bash ] && [ -f $HOME/.git-prompt.sh ]; then
+        . $HOME/.git-completion.bash
+        . $HOME/.git-prompt.sh
+        PS1='\[\033[0;32m\]\u@\h \[\033[0;34m\]\w$(__git_ps1 " (%s)") \$\[\e[00m\] '
+    fi
 
-  # enable programmable completion features (you don't need to enable
-  # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-  # sources /etc/bash.bashrc).
-  if ! shopt -oq posix; then
-      if [ -f /usr/share/bash-completion/bash_completion ]; then
-          . /usr/share/bash-completion/bash_completion
-      elif [ -f /etc/bash_completion ]; then
-          . /etc/bash_completion
-      fi
-  fi
+    # enable programmable completion features (you don't need to enable
+    # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+    # sources /etc/bash.bashrc).
+    if ! shopt -oq posix; then
+        if [ -f /usr/share/bash-completion/bash_completion ]; then
+            . /usr/share/bash-completion/bash_completion
+        elif [ -f /etc/bash_completion ]; then
+            . /etc/bash_completion
+        fi
+    fi
 fi
 
 # set variable identifying the chroot you work in (used in the prompt below)
@@ -88,7 +88,7 @@ if [ -x /usr/bin/dircolors ]; then
             alias grep='grep --color=auto'
             alias fgrep='fgrep --color=auto'
             alias egrep='egrep --color=auto'
-        fi
+fi
 
 # Alias definitions.
 alias ssh='TERM=xterm-256color ssh'
@@ -100,13 +100,13 @@ fi
 
 export NVM_DIR="$HOME/.nvm"
 if [ -d "$NVM_DIR" ]; then
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 fi
 
 if [ -d "$HOME/.rbenv/bin" ]; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
-  eval "$(rbenv init -)"
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
 fi
 
 export PATH="$HOME/.local/bin:$HOME/jk_repo/bin:$HOME/jk_repo/build:$PATH"

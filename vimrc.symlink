@@ -1,39 +1,38 @@
 set nocompatible
 if filereadable("/usr/share/vim/google/google.vim")
-  source /usr/share/vim/google/google.vim
+    source /usr/share/vim/google/google.vim
 
-  Glug youcompleteme-google
-  Glug codefmt
-  Glug codefmt-google
+    Glug youcompleteme-google
+    Glug codefmt
+    Glug codefmt-google
 
-  nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
-  if !exists("g:ycm_semantic_triggers")
-     let g:ycm_semantic_triggers = {}
-  endif
-  let g:ycm_semantic_triggers['typescript'] = ['.']
+    nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
+    if !exists("g:ycm_semantic_triggers")
+        let g:ycm_semantic_triggers = {}
+    endif
+    let g:ycm_semantic_triggers['typescript'] = ['.']
 
-  augroup autoformat_settings
-    au FileType typescript AutoFormatBuffer clang-format
-  augroup END
+    augroup autoformat_settings
+        au FileType typescript AutoFormatBuffer clang-format
+    augroup END
 endif
 filetype plugin indent on
 syntax on
 
 " true color
 if $TERM == 'xterm-256color-italic' || $TERM == 'tmux-256color'
-  let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
+    let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+    set termguicolors
 endif
 
 if $TERM == 'xterm-256color'
-  set termguicolors
+    set termguicolors
 endif
 
-set tabstop=2 " number of visual spaces per TAB
-set softtabstop=2 " number of real spaces in tab when editing
-set shiftwidth=2
-au FileType c,cpp setl tabstop=4 softtabstop=4 shiftwidth=4
+set tabstop=4 " number of visual spaces per TAB
+set softtabstop=4 " number of real spaces in tab when editing
+set shiftwidth=4
 
 set expandtab " tabs are converted to spaces
 set autoindent
@@ -96,8 +95,8 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 let g:ctrlp_use_caching = 0
 
 function FormatFile()
-  let l:lines="all"
-  py3f $HOME/.vim/clang-format.py
+    let l:lines="all"
+    py3f $HOME/.vim/clang-format.py
 endfunction
 
 map <C-I> :call FormatFile()<cr>
