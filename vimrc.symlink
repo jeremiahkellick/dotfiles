@@ -1,21 +1,4 @@
 set nocompatible
-if filereadable("/usr/share/vim/google/google.vim")
-    source /usr/share/vim/google/google.vim
-
-    Glug youcompleteme-google
-    Glug codefmt
-    Glug codefmt-google
-
-    nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
-    if !exists("g:ycm_semantic_triggers")
-        let g:ycm_semantic_triggers = {}
-    endif
-    let g:ycm_semantic_triggers['typescript'] = ['.']
-
-    augroup autoformat_settings
-        au FileType typescript AutoFormatBuffer clang-format
-    augroup END
-endif
 filetype plugin indent on
 syntax on
 
@@ -44,13 +27,15 @@ set splitright
 " scroll the viewport faster
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
-set colorcolumn=101 " show the 80 character limit line
-set number " show relative line number and absolute at cursor
+set colorcolumn=101 " show the 100 character limit line
+set number " show line numbers
+set relativenumber " make line numbers except current line relative to the cursor
 set showcmd " show command in bottom bar
 set cursorline " highlight current line
 set wildmenu " visual autocomplete for command menu
 set lazyredraw " redraw only when we need to.
-set showmatch " highlight matching [{()}]
+set timeoutlen=500
+set ttimeoutlen=0
 set incsearch " search as characters are entered
 set hlsearch " highlight matches
 let mapleader="," " leader is comma
@@ -75,7 +60,6 @@ set writebackup
 runtime macros/matchit.vim " required by textobj-rubyblock
 
 call plug#begin('~/.vim/plugged')
-Plug 'chr4/nginx.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'christoomey/vim-tmux-navigator'
