@@ -73,11 +73,19 @@ call plug#end()
 set background=dark
 colorscheme jkellickonedark
 
-function FormatFile()
-    let l:lines="all"
-    py3f $HOME/.vim/clang-format.py
-endfunction
+if has('python3')
+    function FormatFile()
+        let l:lines="all"
+        py3f $HOME/.vim/clang-format.py
+    endfunction
+elseif has('python')
+    function FormatFile()
+        let l:lines="all"
+        pyf $HOME/.vim/clang-format.py
+    endfunction
+endif
 
-map <C-I> :call FormatFile()<cr>
+map <C-S> :call FormatFile()<CR>
+imap <C-S> <c-o>:call FormatFile()<CR>
 
 map <C-n> :NERDTreeToggle<CR>
