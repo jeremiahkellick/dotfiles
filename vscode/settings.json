@@ -12,7 +12,7 @@
     "editor.acceptSuggestionOnEnter": "off",
     "editor.bracketPairColorization.enabled": false,
     "editor.codeActionsOnSave": {
-        "source.fixAll": true
+        "source.fixAll": "explicit"
     },
     "editor.detectIndentation": false,
     "editor.fontFamily": "'Inconsolata', monospace",
