@@ -86,15 +86,9 @@ vim.keymap.set('n', '<leader>ps', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>gs', vim.cmd.Git)
 
 local ls = require('luasnip')
-vim.keymap.set({"i"}, "<C-K>", function() ls.expand() end, {silent = true})
-vim.keymap.set({"i", "s"}, "<Tab>", function() ls.jump(1) end, {silent = true})
-vim.keymap.set({"i", "s"}, "<S-Tab>", function() ls.jump(-1) end, {silent = true})
-
-vim.keymap.set({"i", "s"}, "<C-L>", function()
-    if ls.choice_active() then
-        ls.change_choice(1)
-    end
-end, {silent = true})
+vim.keymap.set({"i"}, "<C-k>", function() ls.expand() end, {silent = true})
+vim.keymap.set({"i", "s"}, "<C-l>", function() ls.jump(1) end, {silent = true})
+vim.keymap.set({"i", "s"}, "<S-h>", function() ls.jump(-1) end, {silent = true})
 
 -- Treesitter
 require('nvim-treesitter.configs').setup({
