@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+cd $HOME/dotfiles
+
 install_vscode=false
 read -p "Would you like to install vscode [y/n]? " -n 1 -r
 echo
@@ -35,6 +37,11 @@ if [ ! -x "$(command -v tmux)" ]; then
     fi
 fi
 
+# Install unzip
+if [[ "$OSTYPE" == "linux-gnu" ]] && [ ! -x "$(command -v unzip)" ]; then
+    sudo apt-get -y install unzip
+fi
+
 # Install vim
 if [ ! -x "$(command -v vim)" ]; then
     if [[ "$OSTYPE" == "linux-gnu" ]]; then
@@ -42,6 +49,29 @@ if [ ! -x "$(command -v vim)" ]; then
     elif [[ "$OSTYPE" == "darwin"* ]]; then
         brew install vim
     fi
+fi
+
+# Install nvim
+if [[ "$OSTYPE" == "linux-gnu" ]] && [ ! -x "$(command -v nvim)" ]; then
+    if [[ "$OSTYPE" == "linux-gnu" ]]; then
+        nvim_name="nvim-linux64"
+        nvim_version="v0.9.5"
+    elif [[ "$OSTYPE" == "darwin"* ]]; then
+        nvim_name="nvim-macos-arm64"
+        nvim_version="nightly"
+    fi
+    cd $HOME
+    curl -OL https://github.com/neovim/neovim/releases/download/$nvim_version/$nvim_name.tar.gz
+    tar -xzf $nvim_name.tar.gz
+    ln -s $HOME/$nvim_name/bin/nvim .local/bin/nvim
+    rm $nvim_name.tar.gz
+    cd $HOME/dotfiles
+fi
+
+# Install packer.vim
+if [ ! -d $HOME/.local/share/nvim/site/pack/packer ]; then
+    git clone --depth 1 https://github.com/wbthomason/packer.nvim \
+        $HOME/.local/share/nvim/site/pack/packer/start/packer.nvim
 fi
 
 # If macOS, install terminfos

@@ -110,3 +110,7 @@ if [ -d "$HOME/.rbenv/bin" ]; then
 fi
 
 export PATH="$HOME/.local/bin:$HOME/jk_repo/bin:$HOME/jk_repo/build:$PATH"
+
+if [ -x "$(command -v nvim)" ]; then
+    alias vim='nvim'
+fi

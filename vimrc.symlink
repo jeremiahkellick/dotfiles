@@ -21,8 +21,7 @@ set expandtab " tabs are converted to spaces
 set autoindent
 set smartindent
 
-set scrolloff=1 " always show one line above and one line below the cursor
-set backspace=eol " don't allow backspacing past the start of an insert
+set scrolloff=8 " always show one line above and one line below the cursor
 set splitright
 " scroll the viewport faster
 nnoremap <C-e> 3<C-e>
@@ -38,39 +37,25 @@ set timeoutlen=500
 set ttimeoutlen=0
 set incsearch " search as characters are entered
 set hlsearch " highlight matches
-let mapleader="," " leader is comma
+let mapleader=" " " leader is space
 " turn off search highlight when space is pressed
-nnoremap <leader><space> :nohlsearch<CR>
-" disable arrow keys in normal mode
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-" disable arrow keys in insert mode
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
+nnoremap <leader>, :nohlsearch<CR>
 " move backups to /tmp
 set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
 
-runtime macros/matchit.vim " required by textobj-rubyblock
-
 call plug#begin('~/.vim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'benmills/vimux'
 Plug 'jeremiahkellick/jkellick-one-dark-vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'leafgarland/typescript-vim'
 Plug 'mattn/emmet-vim'
 call plug#end()
 
-set background=dark
 colorscheme jkellickonedark
 
 if has('python3')
