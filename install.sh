@@ -9,6 +9,13 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     install_vscode=true
 fi
 
+update_package_manager=false
+read -p "Would you like to update your package manager sources [y/n]? " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    update_package_manager=true
+fi
+
 source symlink.sh
 
 # If macOS, install Homebrew
@@ -17,10 +24,12 @@ if [[ "$OSTYPE" == "darwin"* ]] && [ ! -x "$(command -v brew)" ]; then
 fi
 
 # Update package manager
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    sudo apt-get update
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-    brew update
+if [ "$update_package_manager" = true ]; then
+    if [[ "$OSTYPE" == "linux-gnu" ]]; then
+        sudo apt-get update
+    elif [[ "$OSTYPE" == "darwin"* ]]; then
+        brew update
+    fi
 fi
 
 # Install curl
@@ -52,7 +61,7 @@ if [ ! -x "$(command -v vim)" ]; then
 fi
 
 # Install nvim
-if [[ "$OSTYPE" == "linux-gnu" ]] && [ ! -x "$(command -v nvim)" ]; then
+if [ ! -x "$(command -v nvim)" ]; then
     if [[ "$OSTYPE" == "linux-gnu" ]]; then
         nvim_name="nvim-linux64"
         nvim_version="v0.9.5"
@@ -63,6 +72,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]] && [ ! -x "$(command -v nvim)" ]; then
     cd $HOME
     curl -OL https://github.com/neovim/neovim/releases/download/$nvim_version/$nvim_name.tar.gz
     tar -xzf $nvim_name.tar.gz
+    mkdir -p .local/bin
     ln -s $HOME/$nvim_name/bin/nvim .local/bin/nvim
     rm $nvim_name.tar.gz
     cd $HOME/dotfiles
