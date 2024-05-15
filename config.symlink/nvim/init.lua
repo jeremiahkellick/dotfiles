@@ -69,14 +69,18 @@ vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzb')
 
 vim.keymap.set('x', '<leader>p', '"_dP')
-vim.keymap.set('n', '<leader>y', '"+y')
-vim.keymap.set('v', '<leader>y', '"+y')
+vim.keymap.set({'n', 'v'}, '<leader>y', '"+y')
 vim.keymap.set('n', '<leader>Y', '"+Y')
 
 vim.keymap.set('i', '<C-c>', '<Esc>')
-vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true })
+vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', {silent = true})
 
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+
+vim.keymap.set('n', '<leader>o', 'o<Esc>')
+vim.keymap.set('n', '<leader>O', 'O<Esc>')
+
+vim.keymap.set('i', '<C-o>', '<Esc>O')
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
@@ -88,11 +92,11 @@ vim.keymap.set('n', '<leader>gs', vim.cmd.Git)
 local ls = require('luasnip')
 vim.keymap.set({"i"}, "<C-k>", function() ls.expand() end, {silent = true})
 vim.keymap.set({"i", "s"}, "<C-l>", function() ls.jump(1) end, {silent = true})
-vim.keymap.set({"i", "s"}, "<S-h>", function() ls.jump(-1) end, {silent = true})
+vim.keymap.set({"i", "s"}, "<C-h>", function() ls.jump(-1) end, {silent = true})
 
 -- Treesitter
 require('nvim-treesitter.configs').setup({
-    ensure_installed = { 'c', 'lua', 'vim', 'vimdoc', 'query' },
+    ensure_installed = {'c', 'lua', 'vim', 'vimdoc', 'query'},
     sync_install = false,
 
     -- Automatically install missing parsers when entering buffer
@@ -113,12 +117,19 @@ lsp_zero.on_attach(function(client, bufnr)
     lsp_zero.default_keymaps({buffer = bufnr})
 end)
 
+local lsc = require('lspconfig')
+
 require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = {'clangd'},
     handlers = {
         function(server_name)
-            require('lspconfig')[server_name].setup({})
+            lsc[server_name].setup({})
+        end,
+
+        omnisharp = function()
+            lsc.omnisharp.setup({
+            })
         end
     }
 })
@@ -156,4 +167,27 @@ cmp.setup({
             ls.lsp_expand(args.body)
         end,
     },
+})
+
+-- Snippets
+
+ls.add_snippets('all', {
+    ls.snippet({trig = 'struct%.(%w+)', regTrig = true}, {
+        ls.function_node(function(_, snip)
+            return {'typedef struct ' .. snip.captures[1] .. ' {', '\t'}
+        end, {}),
+        ls.insert_node(0),
+        ls.function_node(function(_, snip)
+            return {'', '} ' .. snip.captures[1] .. ';'}
+        end, {}),
+    }),
+    ls.snippet({trig = 'enum%.(%w+)', regTrig = true}, {
+        ls.function_node(function(_, snip)
+            return {'typedef enum ' .. snip.captures[1] .. ' {', '\t'}
+        end, {}),
+        ls.insert_node(0),
+        ls.function_node(function(_, snip)
+            return {'', '} ' .. snip.captures[1] .. ';'}
+        end, {}),
+    }),
 })
