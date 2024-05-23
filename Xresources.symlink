@@ -1,0 +1,38 @@
+URxvt*font: xft:inconsolata:size=12:antialias=true
+
+#define s_black #181a1f
+#define s_red #e06c75
+#define s_green #98c379
+#define s_yellow #e5c07b
+#define s_blue #61afef
+#define s_purple #c678dd
+#define s_cyan #56b6c2
+#define s_white #dcdfe4
+#define s_light_blue #9fc7ea
+#define s_bg_light #1f2229
+#define s_line_light #2d313b
+#define s_comment_fg #98a0b3
+#define s_non_text #2d3038
+#define s_cursor_line #252830
+#define s_selection #373c47
+
+*background: s_black
+*foreground: s_white
+*cursorColor: s_white
+*color0: s_black
+*color8: s_bg_light
+*color1: s_red
+*color9: s_red
+*color2: s_green
+*color10: s_green
+*color3: s_yellow
+*color11: s_yellow
+*color4: s_blue
+*color12: s_blue
+*color5: s_purple
+*color13: s_purple
+*color6: s_cyan
+*color14: s_cyan
+*color7: s_comment_fg
+*color15: s_white
+
