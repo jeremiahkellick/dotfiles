@@ -51,15 +51,6 @@ if [[ "$OSTYPE" == "linux-gnu" ]] && [ ! -x "$(command -v unzip)" ]; then
     sudo apt-get -y install unzip
 fi
 
-# Install vim
-if [ ! -x "$(command -v vim)" ]; then
-    if [[ "$OSTYPE" == "linux-gnu" ]]; then
-        sudo apt-get -y install vim
-    elif [[ "$OSTYPE" == "darwin"* ]]; then
-        brew install vim
-    fi
-fi
-
 # Install nvim
 if [ ! -x "$(command -v nvim)" ]; then
     if [[ "$OSTYPE" == "linux-gnu" ]]; then
