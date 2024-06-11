@@ -60,19 +60,15 @@ vim.g.mapleader = ' '
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 vim.keymap.set('n', '<leader>,', vim.cmd.nohlsearch)
 
-vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
-vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzb')
 
-vim.keymap.set('x', '<leader>p', '"_dP')
 vim.keymap.set({'n', 'v'}, '<leader>y', '"+y')
 vim.keymap.set('n', '<leader>Y', '"+Y')
 
-vim.keymap.set('i', '<C-c>', '<Esc>')
 vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', {silent = true})
 
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
@@ -80,7 +76,6 @@ vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
 vim.keymap.set('n', '<leader>o', 'o<Esc>')
 vim.keymap.set('n', '<leader>O', 'O<Esc>')
 
-vim.keymap.set('i', '<C-o>', '<Esc>O')
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
@@ -89,10 +84,19 @@ vim.keymap.set('n', '<leader>ps', builtin.live_grep, {})
 
 vim.keymap.set('n', '<leader>gs', vim.cmd.Git)
 
+vim.keymap.set('i', '<C-BS>', '<C-w>')
+vim.keymap.set('i', '<C-h>', '<C-w>')
+vim.keymap.set('i', '<C-i>', '<Esc>')
+vim.keymap.set('i', '<C-o>', '<Esc>O')
+
 local ls = require('luasnip')
-vim.keymap.set({"i"}, "<C-k>", function() ls.expand() end, {silent = true})
-vim.keymap.set({"i", "s"}, "<C-l>", function() ls.jump(1) end, {silent = true})
-vim.keymap.set({"i", "s"}, "<C-h>", function() ls.jump(-1) end, {silent = true})
+vim.keymap.set({"i"}, "<C-l>", function() ls.expand() end, {silent = true})
+vim.keymap.set({"i", "s"}, "<C-j>", function() ls.jump(1) end, {silent = true})
+vim.keymap.set({"i", "s"}, "<C-k>", function() ls.jump(-1) end, {silent = true})
+
+vim.keymap.set('x', 'J', ":m '>+1<CR>gv=gv")
+vim.keymap.set('x', 'K', ":m '<-2<CR>gv=gv")
+vim.keymap.set('x', '<leader>p', '"_dP')
 
 -- Treesitter
 require('nvim-treesitter.configs').setup({
@@ -126,11 +130,6 @@ require('mason-lspconfig').setup({
         function(server_name)
             lsc[server_name].setup({})
         end,
-
-        omnisharp = function()
-            lsc.omnisharp.setup({
-            })
-        end
     }
 })
 
