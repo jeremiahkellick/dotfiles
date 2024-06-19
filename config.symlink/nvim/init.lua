@@ -86,7 +86,7 @@ vim.keymap.set('n', '<leader>gs', vim.cmd.Git)
 
 vim.keymap.set('i', '<C-BS>', '<C-w>')
 vim.keymap.set('i', '<C-h>', '<C-w>')
-vim.keymap.set('i', '<C-i>', '<Esc>')
+vim.keymap.set({'i', 'x'}, '<C-i>', '<Esc>')
 vim.keymap.set('i', '<C-o>', '<Esc>O')
 
 local ls = require('luasnip')
@@ -190,3 +190,7 @@ ls.add_snippets('all', {
         end, {}),
     }),
 })
+
+-- Undotree settings
+
+vim.g.undotree_RelativeTimestamp = 0
