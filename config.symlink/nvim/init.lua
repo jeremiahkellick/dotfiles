@@ -60,7 +60,6 @@ vim.g.mapleader = ' '
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 vim.keymap.set('n', '<leader>,', vim.cmd.nohlsearch)
 
-
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('n', 'n', 'nzzzv')
@@ -76,7 +75,6 @@ vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
 vim.keymap.set('n', '<leader>o', 'o<Esc>')
 vim.keymap.set('n', '<leader>O', 'O<Esc>')
 
-
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
 vim.keymap.set('n', '<C-p>', builtin.git_files, {})
@@ -86,7 +84,6 @@ vim.keymap.set('n', '<leader>gs', vim.cmd.Git)
 
 vim.keymap.set('i', '<C-BS>', '<C-w>')
 vim.keymap.set('i', '<C-h>', '<C-w>')
-vim.keymap.set({'i', 'x'}, '<C-i>', '<Esc>')
 vim.keymap.set('i', '<C-o>', '<Esc>O')
 
 local ls = require('luasnip')
