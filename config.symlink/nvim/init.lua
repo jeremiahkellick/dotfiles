@@ -13,6 +13,7 @@ require('packer').startup(function(use)
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use('saadparwaiz1/cmp_luasnip')
     use('tpope/vim-fugitive')
+    use('tpope/vim-unimpaired')
     use ({
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v3.x',
@@ -73,6 +74,7 @@ vim.keymap.set('n', '<leader>Y', '"+Y')
 vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', {silent = true})
 
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+vim.keymap.set('n', '<leader>i', vim.cmd.cclose)
 
 vim.keymap.set('n', '<leader>o', 'o<Esc>')
 vim.keymap.set('n', '<leader>O', 'O<Esc>')
@@ -87,6 +89,7 @@ vim.keymap.set('n', '<leader>gs', vim.cmd.Git)
 vim.keymap.set('i', '<C-BS>', '<C-w>')
 vim.keymap.set('i', '<C-h>', '<C-w>')
 vim.keymap.set('i', '<C-o>', '<Esc>O')
+vim.keymap.set('i', '<C-u>', '{<CR>}<Esc>O');
 
 local ls = require('luasnip')
 vim.keymap.set({"i"}, "<C-l>", function() ls.expand() end, {silent = true})
