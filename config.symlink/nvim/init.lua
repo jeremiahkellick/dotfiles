@@ -54,6 +54,9 @@ vim.opt.termguicolors = true
 vim.opt.updatetime = 50
 vim.opt.wrap = false
 
+vim.opt.autowrite = true
+vim.opt.makeprg = 'jk_build'
+
 vim.cmd('colorscheme jkellickonedark')
 
 -- Keymaps
@@ -89,7 +92,7 @@ vim.keymap.set('n', '<leader>gs', vim.cmd.Git)
 vim.keymap.set('i', '<C-BS>', '<C-w>')
 vim.keymap.set('i', '<C-h>', '<C-w>')
 vim.keymap.set('i', '<C-o>', '<Esc>O')
-vim.keymap.set('i', '<C-u>', '{<CR>}<Esc>O');
+vim.keymap.set('i', '<C-u>', '{<CR>}<Esc>O')
 
 local ls = require('luasnip')
 vim.keymap.set({"i"}, "<C-l>", function() ls.expand() end, {silent = true})
@@ -99,6 +102,15 @@ vim.keymap.set({"i", "s"}, "<C-k>", function() ls.jump(-1) end, {silent = true})
 vim.keymap.set('x', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('x', 'K', ":m '<-2<CR>gv=gv")
 vim.keymap.set('x', '<leader>p', '"_dP')
+
+function make(args)
+    vim.cmd('silent make! ' .. args .. ' ' .. vim.fn.shellescape(vim.fn.expand('%')))
+    vim.cmd('copen')
+    vim.cmd('wincmd p')
+end
+
+vim.keymap.set('n', '<leader>d', function() make('') end)
+vim.keymap.set('n', '<leader>r', function() make('-O') end)
 
 -- Treesitter
 require('nvim-treesitter.configs').setup({
