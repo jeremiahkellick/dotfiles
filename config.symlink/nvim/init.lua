@@ -112,6 +112,26 @@ end
 vim.keymap.set('n', '<leader>d', function() make('') end)
 vim.keymap.set('n', '<leader>r', function() make('-O') end)
 
+vim.api.nvim_create_user_command(
+    "G",
+    function(opts)
+        vim.cmd('silent grep! ' .. table.concat(opts.fargs, " "))
+        vim.cmd('copen')
+        vim.cmd('wincmd p')
+    end,
+    {nargs = '*'}
+)
+
+vim.api.nvim_create_user_command(
+    "Gf",
+    function(opts)
+        vim.cmd('silent grep! -x -m 1 .*' .. opts.fargs[1] .. '.*')
+        vim.cmd('copen')
+        vim.cmd('wincmd p')
+    end,
+    {nargs = 1}
+)
+
 -- Treesitter
 require('nvim-treesitter.configs').setup({
     ensure_installed = {'c', 'lua', 'vim', 'vimdoc', 'query'},
@@ -146,6 +166,16 @@ require('mason-lspconfig').setup({
         end,
     }
 })
+
+vim.keymap.set('n', ']d', function()
+    vim.diagnostic.goto_next()
+    vim.diagnostic.open_float()
+end)
+
+vim.keymap.set('n', '[d', function()
+    vim.diagnostic.goto_next()
+    vim.diagnostic.open_float()
+end)
 
 -- Autocomplete
 
