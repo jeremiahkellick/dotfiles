@@ -173,7 +173,7 @@ vim.keymap.set('n', ']d', function()
 end)
 
 vim.keymap.set('n', '[d', function()
-    vim.diagnostic.goto_next()
+    vim.diagnostic.goto_prev()
     vim.diagnostic.open_float()
 end)
 
