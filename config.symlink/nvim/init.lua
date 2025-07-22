@@ -109,8 +109,8 @@ function make(args)
     vim.cmd('wincmd p')
 end
 
-vim.keymap.set('n', '<leader>d', function() make('') end)
-vim.keymap.set('n', '<leader>r', function() make('-O') end)
+vim.keymap.set('n', '<leader>s', function() make('--mode=debug_slow') end)
+vim.keymap.set('n', '<leader>f', function() make('--mode=debug_fast') end)
 
 vim.api.nvim_create_user_command(
     "G",
