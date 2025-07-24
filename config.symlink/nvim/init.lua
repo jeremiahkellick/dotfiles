@@ -134,7 +134,7 @@ vim.api.nvim_create_user_command(
 
 -- Treesitter
 require('nvim-treesitter.configs').setup({
-    ensure_installed = {'c', 'lua', 'vim', 'vimdoc', 'query'},
+    ensure_installed = {'c', 'lua', 'objc', 'query', 'vim', 'vimdoc'},
     sync_install = false,
 
     -- Automatically install missing parsers when entering buffer
