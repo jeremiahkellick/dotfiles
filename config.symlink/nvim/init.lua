@@ -11,8 +11,14 @@ require('packer').startup(function(use)
         requires = {{'nvim-lua/plenary.nvim'}, {'BurntSushi/ripgrep'}}
     })
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    use({
+        'nvim-treesitter/nvim-treesitter-textobjects',
+        after = 'nvim-treesitter',
+        requires = 'nvim-treesitter/nvim-treesitter',
+    })
     use('saadparwaiz1/cmp_luasnip')
     use('tpope/vim-fugitive')
+    use('tpope/vim-surround')
     use('tpope/vim-unimpaired')
     use ({
         'VonHeikemen/lsp-zero.nvim',
@@ -136,14 +142,21 @@ vim.api.nvim_create_user_command(
 require('nvim-treesitter.configs').setup({
     ensure_installed = {'c', 'lua', 'objc', 'query', 'vim', 'vimdoc'},
     sync_install = false,
-
-    -- Automatically install missing parsers when entering buffer
-    -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
     auto_install = true,
 
     highlight = {
         enable = true,
         additional_vim_regex_highlighting = false,
+    },
+
+    textobjects = {
+        select = {
+            enable = true,
+            lookahead = true,
+            keymaps = {
+                ['ia'] = '@parameter.inner',
+            }
+        }
     },
 })
 
@@ -215,6 +228,13 @@ cmp.setup({
 -- Snippets
 
 ls.add_snippets('all', {
+    ls.snippet({trig = 'case (%w+):', regTrig = true}, {
+        ls.function_node(function(_, snip)
+            return {'case ' .. snip.captures[1] .. ': {', '\t'}
+        end, {}),
+        ls.insert_node(0),
+        ls.text_node({'', '} break;'}),
+    }),
     ls.snippet({trig = 'struct%.(%w+)', regTrig = true}, {
         ls.function_node(function(_, snip)
             return {'typedef struct ' .. snip.captures[1] .. ' {', '\t'}
