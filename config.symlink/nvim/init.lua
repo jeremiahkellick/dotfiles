@@ -18,6 +18,7 @@ require('packer').startup(function(use)
     })
     use('saadparwaiz1/cmp_luasnip')
     use('tpope/vim-fugitive')
+    use('tpope/vim-repeat')
     use('tpope/vim-surround')
     use('tpope/vim-unimpaired')
     use ({
