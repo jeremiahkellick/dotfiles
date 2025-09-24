@@ -52,6 +52,7 @@ vim.opt.backup = false
 vim.opt.swapfile = false
 vim.opt.undofile = true
 
+vim.opt.textwidth = 100
 vim.opt.colorcolumn = '101'
 vim.opt.cursorline = true
 vim.opt.incsearch = true
@@ -119,6 +120,40 @@ end
 vim.keymap.set('n', '<leader>s', function() make('--mode=debug_slow') end)
 vim.keymap.set('n', '<leader>f', function() make('--mode=debug_fast') end)
 
+function reflow_in_tag()
+    local saved_view = vim.fn.winsaveview()
+
+    vim.cmd.normal('vit')
+
+    local start_pos = vim.fn.getpos('v')
+    local end_pos = vim.fn.getpos('.')
+
+    if start_pos[2] < end_pos[2] then
+        local start_content = vim.fn.getline(start_pos[2])
+        if start_content:sub(start_pos[3], #start_content):match('^%s*$') then
+            start_pos[2] = start_pos[2] + 1
+            start_pos[3] = 1
+        end
+
+        local end_content = vim.fn.getline(end_pos[2])
+        if end_content:sub(0, end_pos[3]):match('^%s*$') then
+            end_pos[2] = end_pos[2] - 1
+            end_pos[3] = #vim.fn.getline(end_pos[2])
+        end
+
+        vim.cmd.normal('v')
+        vim.api.nvim_win_set_cursor(0, {start_pos[2], start_pos[3] - 1})
+        vim.cmd.normal('v')
+        vim.api.nvim_win_set_cursor(0, {end_pos[2], end_pos[3] - 1})
+    end
+
+    vim.cmd.normal('gq')
+
+    vim.fn.winrestview(saved_view)
+end
+
+vim.keymap.set('n', '<leader>t', reflow_in_tag);
+
 vim.api.nvim_create_user_command(
     "G",
     function(opts)
@@ -156,6 +191,7 @@ require('nvim-treesitter.configs').setup({
             lookahead = true,
             keymaps = {
                 ['ia'] = '@parameter.inner',
+                ['aa'] = '@parameter.outer',
             }
         }
     },
