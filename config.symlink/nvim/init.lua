@@ -53,6 +53,8 @@ vim.opt.swapfile = false
 vim.opt.undofile = true
 
 vim.opt.textwidth = 100
+vim.opt.formatoptions:remove('t')
+vim.opt.formatoptions:remove('c')
 vim.opt.colorcolumn = '101'
 vim.opt.cursorline = true
 vim.opt.incsearch = true
@@ -64,6 +66,7 @@ vim.opt.wrap = false
 
 vim.opt.autowrite = true
 vim.opt.makeprg = 'jk_build'
+vim.opt.errorformat:append([[%\s%#modified:%\s%#%f]])
 
 vim.cmd('colorscheme jkellickonedark')
 
@@ -138,7 +141,7 @@ function reflow_in_tag()
         local end_content = vim.fn.getline(end_pos[2])
         if end_content:sub(0, end_pos[3]):match('^%s*$') then
             end_pos[2] = end_pos[2] - 1
-            end_pos[3] = #vim.fn.getline(end_pos[2])
+            end_pos[3] = math.max(1, #vim.fn.getline(end_pos[2]))
         end
 
         vim.cmd.normal('v')
