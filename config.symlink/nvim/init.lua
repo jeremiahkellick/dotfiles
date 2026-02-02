@@ -160,7 +160,9 @@ vim.keymap.set('n', '<leader>t', reflow_in_tag);
 vim.api.nvim_create_user_command(
     "G",
     function(opts)
-        vim.cmd('silent grep! ' .. table.concat(opts.fargs, " "))
+        local result = vim.system(
+                {'rg', '--vimgrep', table.concat(opts.fargs, " "), {text = true}}):wait()
+        vim.fn.setqflist({}, 'r', {lines = vim.split(result.stdout, '\n')})
         vim.cmd('copen')
         vim.cmd('wincmd p')
     end,
@@ -170,7 +172,11 @@ vim.api.nvim_create_user_command(
 vim.api.nvim_create_user_command(
     "Gf",
     function(opts)
-        vim.cmd('silent grep! -x -m 1 .*' .. opts.fargs[1] .. '.*')
+        local result = vim.system({
+            'rg', '--vimgrep', '--line-regexp', '--max-count=1',
+                    '.*' .. table.concat(opts.fargs, " ") .. '.*', {text = true}
+        }):wait()
+        vim.fn.setqflist({}, 'r', {lines = vim.split(result.stdout, '\n')})
         vim.cmd('copen')
         vim.cmd('wincmd p')
     end,
