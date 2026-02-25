@@ -273,6 +273,18 @@ cmp.setup({
 
 -- Snippets
 
+function typedef_snippet(keyword)
+    return ls.snippet({trig = keyword .. '%.(%w+)', regTrig = true}, {
+        ls.function_node(function(_, snip)
+            return {'typedef ' .. keyword .. ' ' .. snip.captures[1] .. ' {', '\t'}
+        end, {}),
+        ls.insert_node(0),
+        ls.function_node(function(_, snip)
+            return {'', '} ' .. snip.captures[1] .. ';'}
+        end, {}),
+    })
+end
+
 ls.add_snippets('all', {
     ls.snippet({trig = 'case (%w+):', regTrig = true}, {
         ls.function_node(function(_, snip)
@@ -281,24 +293,9 @@ ls.add_snippets('all', {
         ls.insert_node(0),
         ls.text_node({'', '} break;'}),
     }),
-    ls.snippet({trig = 'struct%.(%w+)', regTrig = true}, {
-        ls.function_node(function(_, snip)
-            return {'typedef struct ' .. snip.captures[1] .. ' {', '\t'}
-        end, {}),
-        ls.insert_node(0),
-        ls.function_node(function(_, snip)
-            return {'', '} ' .. snip.captures[1] .. ';'}
-        end, {}),
-    }),
-    ls.snippet({trig = 'enum%.(%w+)', regTrig = true}, {
-        ls.function_node(function(_, snip)
-            return {'typedef enum ' .. snip.captures[1] .. ' {', '\t'}
-        end, {}),
-        ls.insert_node(0),
-        ls.function_node(function(_, snip)
-            return {'', '} ' .. snip.captures[1] .. ';'}
-        end, {}),
-    }),
+    typedef_snippet('struct'),
+    typedef_snippet('union'),
+    typedef_snippet('enum'),
 })
 
 -- Undotree settings
