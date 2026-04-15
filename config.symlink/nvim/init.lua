@@ -7,7 +7,7 @@ require('packer').startup(function(use)
     use('jeremiahkellick/jkellick-one-dark-vim')
     use('mbbill/undotree')
     use({
-        'nvim-telescope/telescope.nvim', tag = '0.1.6',
+        'nvim-telescope/telescope.nvim',
         requires = {{'nvim-lua/plenary.nvim'}, {'BurntSushi/ripgrep'}}
     })
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
@@ -66,7 +66,7 @@ vim.opt.wrap = false
 
 vim.opt.autowrite = true
 vim.opt.makeprg = 'jk_build'
-vim.opt.errorformat:append([[%\s%#modified:%\s%#%f]])
+vim.cmd([[set errorformat+=%\\s%#modified:%\\s%#%f,]])
 
 vim.cmd('colorscheme jkellickonedark')
 
@@ -184,7 +184,7 @@ vim.api.nvim_create_user_command(
 )
 
 -- Treesitter
-require('nvim-treesitter.configs').setup({
+require('nvim-treesitter.config').setup({
     ensure_installed = {'c', 'lua', 'objc', 'query', 'vim', 'vimdoc'},
     sync_install = false,
     auto_install = true,
