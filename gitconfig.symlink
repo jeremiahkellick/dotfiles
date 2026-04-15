@@ -3,7 +3,7 @@
     email = jeremiah@jeremiahkellick.com
 [core]
     excludesfile = ~/.gitignore
-    editor = vim
+    editor = nvim
 [push]
     default = simple
 [color]
