@@ -10,7 +10,7 @@ require('packer').startup(function(use)
         'nvim-telescope/telescope.nvim', tag = '0.1.6',
         requires = {{'nvim-lua/plenary.nvim'}, {'BurntSushi/ripgrep'}}
     })
-    use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    use({'nvim-treesitter/nvim-treesitter', tag = 'v0.9.3', run = ':TSUpdate'})
     use({
         'nvim-treesitter/nvim-treesitter-textobjects',
         after = 'nvim-treesitter',
@@ -25,12 +25,12 @@ require('packer').startup(function(use)
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v3.x',
         requires = {
-            {'williamboman/mason.nvim'},
-            {'williamboman/mason-lspconfig.nvim'},
-            {'neovim/nvim-lspconfig'},
-            {'hrsh7th/nvim-cmp'},
-            {'hrsh7th/cmp-nvim-lsp'},
-            {'L3MON4D3/LuaSnip'},
+            {'williamboman/mason.nvim', tag = 'v1.9.0'},
+            {'williamboman/mason-lspconfig.nvim', tag = 'v1.26.0'},
+            {'neovim/nvim-lspconfig', tag = 'v1.8.0'},
+            {'hrsh7th/nvim-cmp', commit = '04e0ca376d6abdbfc8b52180f8ea236cbfddf782'},
+            {'hrsh7th/cmp-nvim-lsp', commit = '5af77f54de1b16c34b23cba810150689a3a90312'},
+            {'L3MON4D3/LuaSnip', tag = 'v2.2.0'},
         }
     })
     use('wbthomason/packer.nvim')
