@@ -27,6 +27,8 @@ done
 
 extensions=$( find -H "$HOME/dotfiles/vscode-extensions" -mindepth 1 -maxdepth 1 -type d )
 
+mkdir -p $HOME/.vscode/extensions
+
 for ext in $extensions ; do
     target="$HOME/.vscode/extensions/$( basename "$ext" )"
     if [ ! -L "$target" ]; then
