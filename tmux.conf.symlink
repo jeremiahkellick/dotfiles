@@ -1,5 +1,6 @@
 if-shell "uname | grep -q Darwin" "source-file $HOME/.tmux-macos.conf" \
                                   "source-file $HOME/.tmux-linux.conf"
+set -g focus-events on
 setw -g mode-keys vi
 set -g mouse on
 set -g base-index 1

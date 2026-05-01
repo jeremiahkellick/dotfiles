@@ -70,6 +70,14 @@ vim.cmd([[set errorformat+=%\\s%#modified:%\\s%#%f,]])
 
 vim.cmd('colorscheme jkellickonedark')
 
+-- Enable autoread and set up checking triggers
+
+vim.o.autoread = true
+vim.api.nvim_create_autocmd({'FocusGained', 'BufEnter' }, {
+  command = "if mode() != 'c' | checktime | endif",
+  pattern = "*",
+})
+
 -- Keymaps
 
 vim.g.mapleader = ' '
