@@ -19,6 +19,7 @@ require('packer').startup(function(use)
     use('saadparwaiz1/cmp_luasnip')
     use('tpope/vim-fugitive')
     use('tpope/vim-repeat')
+    use('tpope/vim-sleuth')
     use('tpope/vim-surround')
     use('tpope/vim-unimpaired')
     use ({
@@ -191,9 +192,13 @@ vim.api.nvim_create_user_command(
     {nargs = 1}
 )
 
+vim.keymap.set('n', '<leader>g', function()
+  vim.fn.setreg('+', vim.fn.expand('%'))
+end)
+
 -- Treesitter
 require('nvim-treesitter.config').setup({
-    ensure_installed = {'c', 'lua', 'objc', 'query', 'vim', 'vimdoc'},
+    ensure_installed = {'c', 'cpp', 'lua', 'objc', 'query', 'vim', 'vimdoc'},
     sync_install = false,
     auto_install = true,
 
@@ -214,6 +219,44 @@ require('nvim-treesitter.config').setup({
     },
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "arduino",
+    callback = function()
+        vim.treesitter.start(nil, 'cpp')
+    end
+})
+
+function _G.SpecIndent()
+    local lnum = vim.v.lnum
+    local prev = vim.fn.prevnonblank(lnum - 1)
+    if prev == 0 then return 0 end
+
+    local sw = vim.fn.shiftwidth()
+    local indent = vim.fn.indent(prev)
+
+    -- previous line opens a block -> indent one deeper
+    if vim.fn.getline(prev):match("[%{%[%(]%s*$") then
+        indent = indent + sw
+    end
+    -- current line closes a block -> dedent one
+    if vim.fn.getline(lnum):match("^%s*[%}%]%)]") then
+        indent = indent - sw
+    end
+
+    return math.max(indent, 0)
+end
+
+vim.filetype.add({ extension = { spec = "myspec" } })
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "myspec",
+    callback = function()
+        vim.opt_local.cindent = false
+        vim.opt_local.indentexpr = "v:lua.SpecIndent()"
+        vim.opt_local.indentkeys:remove(":")
+    end
+})
+
 -- LSP
 
 local lsp_zero = require('lsp-zero')
@@ -222,26 +265,27 @@ lsp_zero.on_attach(function(client, bufnr)
     lsp_zero.default_keymaps({buffer = bufnr})
 end)
 
-local lsc = require('lspconfig')
+vim.lsp.config('arduino_language_server', {
+    cmd = {
+        'arduino-language-server',
+        '-clangd', vim.fn.exepath('clangd'),
+        '-cli', vim.fn.exepath('arduino-cli'),
+        '-cli-config', vim.fn.expand('~/.arduino15/arduino-cli.yaml'),
+        '-fqbn', 'arduino:avr:leonardo',
+    },
+})
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = {'clangd'},
-    handlers = {
-        function(server_name)
-            lsc[server_name].setup({})
-        end,
-    }
 })
 
 vim.keymap.set('n', ']d', function()
-    vim.diagnostic.goto_next()
-    vim.diagnostic.open_float()
+    vim.diagnostic.jump({count = 1, float = true})
 end)
 
 vim.keymap.set('n', '[d', function()
-    vim.diagnostic.goto_prev()
-    vim.diagnostic.open_float()
+    vim.diagnostic.jump({count = -1, float = true})
 end)
 
 -- Autocomplete

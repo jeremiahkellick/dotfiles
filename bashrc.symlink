@@ -94,6 +94,12 @@ fi
 alias ssh='TERM=xterm-256color ssh'
 alias t='tmux'
 
+psearch() {
+    local pids
+    pids=$(pgrep -d, "$@") || return 1
+    ps -o pid,ppid,comm,args -ww -p "$pids"
+}
+
 if [ -x /usr/bin/mint-fortune ]; then
     /usr/bin/mint-fortune
 fi
@@ -109,7 +115,8 @@ if [ -d "$HOME/.rbenv/bin" ]; then
     eval "$(rbenv init -)"
 fi
 
-export PATH="$HOME/.local/bin:$HOME/jk_repo/bin:$HOME/jk_repo/build:$PATH"
+export LS_COLORS="di=1;94:ln=1;96:so=1;95:pi=1;93:ex=1;92:bd=1;90;40:cd=1;90;40:or=1;91:mi=1;91"
+export PATH="$HOME/python_env/bin:$HOME/.local/bin:$HOME/jk_repo/bin:$HOME/jk_repo/build:$PATH"
 
 if [ -x "$(command -v nvim)" ]; then
     alias vim='nvim'
