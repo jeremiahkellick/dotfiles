@@ -4,13 +4,14 @@ AlignAfterOpenBracket: DontAlign
 AlignEscapedNewlines: Left
 AlignOperands: DontAlign
 AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: WithoutElse
 BinPackArguments: false
 BinPackParameters: false
+BracedInitializerIndentWidth: 4
 BreakBeforeBinaryOperators: NonAssignment
-BreakBeforeBraces: Linux
+BreakBeforeBraces: Attach
 ColumnLimit: 100
 ContinuationIndentWidth: 8
-IndentPPDirectives: BeforeHash
+IndentPPDirectives: None
 IndentWidth: 4
-InsertBraces: true
 TabWidth: 4
