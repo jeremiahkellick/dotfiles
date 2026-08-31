@@ -55,7 +55,7 @@ else # bash only
     if [ -f $HOME/.git-completion.bash ] && [ -f $HOME/.git-prompt.sh ]; then
         . $HOME/.git-completion.bash
         . $HOME/.git-prompt.sh
-        PS1='\[\033[0;32m\]\u@\h \[\033[0;34m\]\w$(__git_ps1 " (%s)") \$\[\e[00m\] '
+        PS1='\[\033[0;92m\]\u@\h \[\033[0;94m\]\w$(__git_ps1 " (%s)") \$\[\e[00m\] '
     fi
 
     # enable programmable completion features (you don't need to enable
@@ -80,15 +80,12 @@ case "$TERM" in
     xterm|xterm-color|*-256color) color_prompt=yes;;
 esac
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" \
-        || eval "$(dircolors -b)"
-            alias ls='ls --color=auto'
-            alias grep='grep --color=auto'
-            alias fgrep='fgrep --color=auto'
-            alias egrep='egrep --color=auto'
+if ls --color=auto -d . >/dev/null 2>&1; then
+    alias ls='ls --color=auto'
 fi
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 
 # Alias definitions.
 alias ssh='TERM=xterm-256color ssh'
@@ -115,7 +112,9 @@ if [ -d "$HOME/.rbenv/bin" ]; then
     eval "$(rbenv init -)"
 fi
 
-export LS_COLORS="di=1;94:ln=1;96:so=1;95:pi=1;93:ex=1;92:bd=1;90;40:cd=1;90;40:or=1;91:mi=1;91"
+export LS_COLORS="di=1;94:ln=1;96:so=1;95:do=1;95:pi=1;93:ex=1;92:bd=1;93;40:cd=1;93;40:or=1;91:mi=1;91:su=97;41:sg=30;103:tw=30;102:ow=94:st=97;44"
+export GREP_COLORS="ms=01;91:mc=01;91:sl=:cx=:fn=95:ln=92:bn=92:se=96"
+
 export PATH="$HOME/python_env/bin:$HOME/.local/bin:$HOME/jk_repo/bin:$HOME/jk_repo/build:$PATH"
 
 if [ -x "$(command -v nvim)" ]; then

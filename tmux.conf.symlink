@@ -27,3 +27,15 @@ bind-key -T copy-mode-vi C-j select-pane -D
 bind-key -T copy-mode-vi C-k select-pane -U
 bind-key -T copy-mode-vi C-l select-pane -R
 bind-key -T copy-mode-vi 'C-\' select-pane -l
+
+set -g status-style "bg=brightgreen,fg=black"
+set -g message-style "bg=brightyellow,fg=black"
+set -g message-command-style "bg=black,fg=brightyellow"
+set -g mode-style "bg=brightyellow,fg=black"
+set -g copy-mode-match-style "bg=brightcyan,fg=black"
+set -g copy-mode-current-match-style "bg=brightmagenta,fg=black"
+set -g copy-mode-mark-style "bg=brightred,fg=black"
+set -g clock-mode-colour brightblue
+set -g display-panes-colour brightblue
+set -g display-panes-active-colour brightred
+set -g pane-active-border-style "#{?pane_in_mode,fg=brightyellow,#{?synchronize-panes,fg=brightred,fg=brightgreen}}"

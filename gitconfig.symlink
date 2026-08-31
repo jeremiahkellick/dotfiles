@@ -15,3 +15,61 @@
     rebase = true
 [init]
 	defaultBranch = main
+
+[color "diff"]
+    meta = brightyellow
+    frag = bold brightmagenta
+    func = brightcyan
+    old = brightred
+    new = brightgreen
+    commit = brightyellow
+    # whitespace errors render as a bare background; default fg is non-black
+    whitespace = normal red
+[color "status"]
+    header = brightwhite
+    added = brightgreen
+    updated = brightgreen
+    changed = brightred
+    untracked = brightred
+    branch = brightcyan
+    # was "red reverse", which renders as near-black text on red
+    nobranch = black brightred
+    localBranch = brightgreen
+    remoteBranch = brightred
+    unmerged = brightred
+[color "branch"]
+    current = brightgreen
+    local = brightwhite
+    remote = brightred
+    upstream = brightcyan
+    plain = brightwhite
+[color "decorate"]
+    branch = bold brightgreen
+    remoteBranch = bold brightred
+    tag = bold brightyellow
+    stash = bold brightmagenta
+    HEAD = bold brightcyan
+    grafted = bold brightblue
+[color "grep"]
+    context = brightwhite
+    filename = brightmagenta
+    function = brightblue
+    lineNumber = brightgreen
+    column = brightgreen
+    match = bold brightred
+    selected = brightwhite
+    separator = brightcyan
+[color "interactive"]
+    header = bold brightwhite
+    help = bold brightred
+    prompt = bold brightblue
+    error = bold brightred
+[color "remote"]
+    hint = brightwhite
+    warning = brightyellow
+    success = brightgreen
+    error = brightred
+[color "push"]
+    error = brightred
+[color "transport"]
+    rejected = brightred
