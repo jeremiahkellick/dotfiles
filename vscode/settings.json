@@ -1,11 +1,13 @@
 {
     "[c]": {
         "editor.defaultFormatter": "xaver.clang-format",
-        "editor.formatOnSave": true
+        "editor.tabSize": 4,
     },
     "[css]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true
+    },
+    "[python]": {
+        "editor.tabSize": 4,
     },
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.acceptSuggestionOnCommitCharacter": false,
@@ -31,12 +33,10 @@
     "git.ignoreLegacyWarning": true,
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true,
-        "editor.tabSize": 2
+        "editor.tabSize": 2,
     },
     "[javascript][json][jsonc][typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true
     },
     "javascript.updateImportsOnFileMove.enabled": "always",
     "remote.SSH.remotePlatform": {
