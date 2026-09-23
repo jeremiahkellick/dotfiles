@@ -166,30 +166,32 @@ end
 
 vim.keymap.set('n', '<leader>t', reflow_in_tag);
 
+local function rg_qflist(args)
+    local cmd = {'rg', '--vimgrep'}
+    vim.list_extend(cmd, args)
+    local result = vim.system(cmd, {text = true}):wait()
+    local lines = vim.split(result.stdout or '', '\n', {trimempty = true})
+    vim.fn.setqflist({}, 'r', {lines = lines})
+    vim.cmd('copen')
+    vim.cmd('wincmd p')
+end
+
 vim.api.nvim_create_user_command(
     "G",
     function(opts)
-        local result = vim.system(
-                {'rg', '--vimgrep', table.concat(opts.fargs, " "), {text = true}}):wait()
-        vim.fn.setqflist({}, 'r', {lines = vim.split(result.stdout, '\n')})
-        vim.cmd('copen')
-        vim.cmd('wincmd p')
+        rg_qflist(opts.fargs)
     end,
-    {nargs = '*'}
+    {nargs = '+'}
 )
 
 vim.api.nvim_create_user_command(
     "Gf",
     function(opts)
-        local result = vim.system({
-            'rg', '--vimgrep', '--line-regexp', '--max-count=1',
-                    '.*' .. table.concat(opts.fargs, " ") .. '.*', {text = true}
-        }):wait()
-        vim.fn.setqflist({}, 'r', {lines = vim.split(result.stdout, '\n')})
-        vim.cmd('copen')
-        vim.cmd('wincmd p')
+        local args = {'--line-regexp', '--max-count=1', '.*' .. opts.fargs[1] .. '.*'}
+        vim.list_extend(args, vim.list_slice(opts.fargs, 2))
+        rg_qflist(args)
     end,
-    {nargs = 1}
+    {nargs = '+'}
 )
 
 vim.keymap.set('n', '<leader>g', function()
